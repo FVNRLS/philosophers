@@ -1,4 +1,4 @@
-# philolosphers
+# philosophers
 
 This project is a training for multi-thread/multi-process programming with the use of mutex and semaphore.
 Two different variants are used to simulate and solve the famous Dining Philosophers problem.
