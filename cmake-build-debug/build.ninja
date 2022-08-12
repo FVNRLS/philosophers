@@ -49,11 +49,41 @@ cmake_ninja_workdir = /Users/rmazurit/Documents/42_Projects/philosophers/cmake-b
 
 build cmake_object_order_depends_target_philosophers: phony || CMakeFiles/philosophers.dir
 
-build CMakeFiles/philosophers.dir/src/philo/main.c.o: C_COMPILER__philosophers_Debug /Users/rmazurit/Documents/42_Projects/philosophers/src/philo/main.c || cmake_object_order_depends_target_philosophers
-  DEP_FILE = CMakeFiles/philosophers.dir/src/philo/main.c.o.d
+build CMakeFiles/philosophers.dir/philo/src/main.c.o: C_COMPILER__philosophers_Debug /Users/rmazurit/Documents/42_Projects/philosophers/philo/src/main.c || cmake_object_order_depends_target_philosophers
+  DEP_FILE = CMakeFiles/philosophers.dir/philo/src/main.c.o.d
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -mmacosx-version-min=10.15 -std=gnu99
   OBJECT_DIR = CMakeFiles/philosophers.dir
-  OBJECT_FILE_DIR = CMakeFiles/philosophers.dir/src/philo
+  OBJECT_FILE_DIR = CMakeFiles/philosophers.dir/philo/src
+
+build CMakeFiles/philosophers.dir/philo/src/input_parser.c.o: C_COMPILER__philosophers_Debug /Users/rmazurit/Documents/42_Projects/philosophers/philo/src/input_parser.c || cmake_object_order_depends_target_philosophers
+  DEP_FILE = CMakeFiles/philosophers.dir/philo/src/input_parser.c.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -mmacosx-version-min=10.15 -std=gnu99
+  OBJECT_DIR = CMakeFiles/philosophers.dir
+  OBJECT_FILE_DIR = CMakeFiles/philosophers.dir/philo/src
+
+build CMakeFiles/philosophers.dir/philo/src/initializers/forks_initializer.c.o: C_COMPILER__philosophers_Debug /Users/rmazurit/Documents/42_Projects/philosophers/philo/src/initializers/forks_initializer.c || cmake_object_order_depends_target_philosophers
+  DEP_FILE = CMakeFiles/philosophers.dir/philo/src/initializers/forks_initializer.c.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -mmacosx-version-min=10.15 -std=gnu99
+  OBJECT_DIR = CMakeFiles/philosophers.dir
+  OBJECT_FILE_DIR = CMakeFiles/philosophers.dir/philo/src/initializers
+
+build CMakeFiles/philosophers.dir/philo/src/initializers/phils_initilaizer.c.o: C_COMPILER__philosophers_Debug /Users/rmazurit/Documents/42_Projects/philosophers/philo/src/initializers/phils_initilaizer.c || cmake_object_order_depends_target_philosophers
+  DEP_FILE = CMakeFiles/philosophers.dir/philo/src/initializers/phils_initilaizer.c.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -mmacosx-version-min=10.15 -std=gnu99
+  OBJECT_DIR = CMakeFiles/philosophers.dir
+  OBJECT_FILE_DIR = CMakeFiles/philosophers.dir/philo/src/initializers
+
+build CMakeFiles/philosophers.dir/philo/src/error_manager.c.o: C_COMPILER__philosophers_Debug /Users/rmazurit/Documents/42_Projects/philosophers/philo/src/error_manager.c || cmake_object_order_depends_target_philosophers
+  DEP_FILE = CMakeFiles/philosophers.dir/philo/src/error_manager.c.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -mmacosx-version-min=10.15 -std=gnu99
+  OBJECT_DIR = CMakeFiles/philosophers.dir
+  OBJECT_FILE_DIR = CMakeFiles/philosophers.dir/philo/src
+
+build CMakeFiles/philosophers.dir/philo/tools/ft_strlen.c.o: C_COMPILER__philosophers_Debug /Users/rmazurit/Documents/42_Projects/philosophers/philo/tools/ft_strlen.c || cmake_object_order_depends_target_philosophers
+  DEP_FILE = CMakeFiles/philosophers.dir/philo/tools/ft_strlen.c.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -mmacosx-version-min=10.15 -std=gnu99
+  OBJECT_DIR = CMakeFiles/philosophers.dir
+  OBJECT_FILE_DIR = CMakeFiles/philosophers.dir/philo/tools
 
 
 # =============================================================================
@@ -63,7 +93,7 @@ build CMakeFiles/philosophers.dir/src/philo/main.c.o: C_COMPILER__philosophers_D
 #############################################
 # Link the executable philosophers
 
-build philosophers: C_EXECUTABLE_LINKER__philosophers_Debug CMakeFiles/philosophers.dir/src/philo/main.c.o
+build philosophers: C_EXECUTABLE_LINKER__philosophers_Debug CMakeFiles/philosophers.dir/philo/src/main.c.o CMakeFiles/philosophers.dir/philo/src/input_parser.c.o CMakeFiles/philosophers.dir/philo/src/initializers/forks_initializer.c.o CMakeFiles/philosophers.dir/philo/src/initializers/phils_initilaizer.c.o CMakeFiles/philosophers.dir/philo/src/error_manager.c.o CMakeFiles/philosophers.dir/philo/tools/ft_strlen.c.o
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -mmacosx-version-min=10.15
   OBJECT_DIR = CMakeFiles/philosophers.dir
   POST_BUILD = :
