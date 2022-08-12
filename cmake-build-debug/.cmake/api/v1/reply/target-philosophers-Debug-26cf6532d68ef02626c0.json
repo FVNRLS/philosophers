@@ -60,7 +60,8 @@
 				6,
 				7,
 				8,
-				9
+				9,
+				10
 			]
 		}
 	],
@@ -101,7 +102,8 @@
 				6,
 				7,
 				8,
-				9
+				9,
+				10
 			]
 		},
 		{
@@ -128,7 +130,13 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "philo/src/input_parser.c",
+			"path" : "philo/src/input_parser/input_parser.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "philo/src/input_parser/args_checker.c",
 			"sourceGroupIndex" : 0
 		},
 		{

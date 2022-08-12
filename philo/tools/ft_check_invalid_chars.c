@@ -27,15 +27,15 @@ void	ft_check_invalid_chars(char *str)
 
 	i = 0;
 	if (!str || str[0] == '\0')
-		print_error_exit(INVALID_NUMBER_OF_PHILOSOPHERS);
+		print_error_exit(INVALID_CHARACTERS_FOUND);
 	if (str[i] == '-')
 		i++;
 	if (str[0] == '-' && str[1] == '\0')
-		print_error_exit(INVALID_NUMBER_OF_PHILOSOPHERS);
+		print_error_exit(INVALID_CHARACTERS_FOUND);
 	while (str[i] != '\0')
 	{
 		if (ft_is_digit(str[i]) == false)
-			print_error_exit(INVALID_NUMBER_OF_PHILOSOPHERS);
+			print_error_exit(INVALID_CHARACTERS_FOUND);
 		i++;
 	}
 }

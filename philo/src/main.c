@@ -6,14 +6,21 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 13:11:48 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/12 16:38:49 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/12 19:46:26 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/philo.h"
 
+void check_leaks()
+{
+	system("leaks philosophers");
+}
+
  int	main(int argc, char **argv)
  {
+//	atexit(check_leaks);
+
 	t_phil	phil;
 	t_args	args;
 
@@ -22,8 +29,6 @@
 	args.av = argv;
 
 	parse_input(&phil);
-	gettimeofday(&phil.t_current, NULL);
- 	printf("microsec.: %d\n", phil.t_current.tv_usec);
 //	init_forks();
 //	init_phil(); //create threads with while loop
 

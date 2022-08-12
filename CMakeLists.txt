@@ -10,8 +10,9 @@ add_executable(
         #MAIN
         philosophers philo/src/main.c
 
-        #PARSER
-        philosophers philo/src/input_parser.c
+        #INPUT PARSER
+        philosophers philo/src/input_parser/input_parser.c
+        philosophers philo/src/input_parser/args_checker.c
 
         #INITIALIZERS
         philosophers philo/src/initializers/forks_initializer.c
