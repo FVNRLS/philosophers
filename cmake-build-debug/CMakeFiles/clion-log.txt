@@ -1,0 +1,1 @@
+CMakeLists.txt not found in /Users/rmazurit/Documents/42_Projects/philosophers Select CMakeLists.txt

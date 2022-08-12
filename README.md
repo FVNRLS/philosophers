@@ -12,6 +12,9 @@ If you are a 42 student visiting this project, please do not blindly copy the so
 The solution approach of the project lies in the basic understanding of the threads commands such as: 
 usleep, gettimeofday, pthread_create, pthread_detach, pthread_join, thread_mutex_init, pthread_mutex_destroy, pthread_mutex_lock, pthread_mutex_unlock.
 
+In addition, the following functions are allowed for the project:
+memset, printf, malloc, free, write.
+
 <br>**Rules**
 
 * A number of philosophers are sitting at a round table doing one of three things:
