@@ -57,7 +57,10 @@
 				3,
 				4,
 				5,
-				6
+				6,
+				7,
+				8,
+				9
 			]
 		}
 	],
@@ -95,7 +98,10 @@
 				3,
 				4,
 				5,
-				6
+				6,
+				7,
+				8,
+				9
 			]
 		},
 		{
@@ -141,6 +147,24 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "philo/src/error_manager.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "philo/tools/ft_atol.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "philo/tools/ft_check_invalid_chars.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "philo/tools/ft_is_digit.c",
 			"sourceGroupIndex" : 0
 		},
 		{

@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.h                                            :+:      :+:    :+:   */
+/*   ft_is_digit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/12 16:28:34 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/12 17:05:00 by rmazurit         ###   ########.fr       */
+/*   Created: 2022/08/12 16:51:40 by rmazurit          #+#    #+#             */
+/*   Updated: 2022/08/12 16:51:42 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ERROR_H
-# define ERROR_H
+#include <stdbool.h>
 
-//ERROR CODES:
-# define INVALID_NUMBER_OF_ARGUMENTS 	1
-# define INVALID_NUMBER_OF_PHILOSOPHERS 2
-
-void	print_error_exit(int	error_key);
-
-#endif
+bool	ft_is_digit(char c)
+{
+	if (c >= '0' && c <= '9')
+		return (true);
+	return (false);
+}

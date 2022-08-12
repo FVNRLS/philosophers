@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 13:12:53 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/12 16:30:35 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/12 17:17:36 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,18 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+
 # include <stdio.h>
+# include <stdbool.h>
 # include <pthread.h>
 # include <fcntl.h>
 # include <sys/time.h>
 # include <semaphore.h>
 
 # include "./error.h"
+# include "./tools.h"
+
+# define MAX_THREADS				10240
 
 # define LEFT_FORK_BUSY				1
 # define RIGHT_FORK_BUSY			2
@@ -36,7 +41,7 @@ typedef struct s_args
 
 typedef struct s_phil
 {
-	int				n_phil;
+	long			n_phil;
 	double			t_eat;
 	double			t_sleep;
 	double			t_think;
@@ -52,7 +57,5 @@ typedef struct s_phil
 void	parse_input(t_phil *phil);
 
 
-//TOOLS
-int		ft_strlen(char *s);
 
 #endif

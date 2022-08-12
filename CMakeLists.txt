@@ -21,5 +21,10 @@ add_executable(
         philosophers philo/src/error_manager.c
 
         #TOOLS
+        philo/tools/ft_atol.c
+        philo/tools/ft_check_invalid_chars.c
+        philo/tools/ft_is_digit.c
         philo/tools/ft_strlen.c
+
+
 )

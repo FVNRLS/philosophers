@@ -6,18 +6,22 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 15:34:24 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/12 16:42:27 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/12 17:41:35 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/philo.h"
 
 
-static void	check_input(t_phil *phil)
+static void	check_phil_num(t_phil *phil)
 {
-	if (phil->args->ac != 6)
-		print_error(WRONG_NUMBER_OF_ARGUMENTS);
-//	else if (phil->args->av)
+	char *str;
+
+	str = phil->args->av[1];
+	ft_check_invalid_chars(str);
+	phil->n_phil = ft_atol(str);
+	if (phil->n_phil < 1 || phil->n_phil > MAX_THREADS)
+		print_error_exit(INVALID_NUMBER_OF_PHILOSOPHERS);
 }
 
 
@@ -31,5 +35,7 @@ static void	check_input(t_phil *phil)
  * */
 void	parse_input(t_phil *phil)
 {
-	check_input(phil);
+	if (phil->args->ac != 6)
+		print_error_exit(INVALID_NUMBER_OF_ARGUMENTS);
+	check_phil_num(phil);
 }

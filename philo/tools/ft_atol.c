@@ -1,22 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.h                                            :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/12 16:28:34 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/12 17:05:00 by rmazurit         ###   ########.fr       */
+/*   Created: 2022/08/12 16:47:59 by rmazurit          #+#    #+#             */
+/*   Updated: 2022/08/12 17:26:08 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ERROR_H
-# define ERROR_H
+#include "../incl/philo.h"
 
-//ERROR CODES:
-# define INVALID_NUMBER_OF_ARGUMENTS 	1
-# define INVALID_NUMBER_OF_PHILOSOPHERS 2
+long	ft_atol(const char *str)
+{
+	int		i;
+	long	sign;
+	long	res;
 
-void	print_error_exit(int	error_key);
-
-#endif
+	i = 0;
+	sign = 1;
+	res = 0;
+	if (str[i] == '-')
+	{
+		sign *= (-1);
+		i++;
+	}
+	while (str[i] != '\0')
+	{
+		res = (str[i] - '0') + (res * 10);
+		i++;
+	}
+	res = res * sign;
+	return (res);
+}
