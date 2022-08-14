@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 14:47:44 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/14 16:14:15 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/14 16:16:16 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void 	check_kill_phil(t_phil *phil)
 		if (phil->die_msg_displayed == false)
 		{
 			phil->die_msg_displayed = true;
-			printf("%ld ms philosopher %d died!\n", phil->tstamp->res_ms, phil->index);
+			printf("%ldms	%d died!\n", phil->tstamp->res_ms, phil->index);
 		}
 		phil->phil_died = true;
 		pthread_mutex_unlock(&phil->fork);

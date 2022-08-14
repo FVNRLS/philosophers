@@ -42,7 +42,7 @@ void	check_time_to_eat(t_phil *phil)
 	if (t_input < 1)
 		print_error_exit(INVALID_TIME_TO_EAT);
 	phil->t_eat = t_input;
-	if (phil->t_eat > phil->t_die)
+	if (phil->t_eat >= phil->t_die)
 		print_error_exit(INVALID_TIME_TO_EAT);
 }
 
@@ -54,7 +54,7 @@ void	check_time_to_sleep(t_phil *phil)
 	if (t_input < 1)
 		print_error_exit(INVALID_TIME_TO_SLEEP);
 	phil->t_sleep = t_input;
-	if (phil->t_sleep > phil->t_die)
+	if (phil->t_sleep >= phil->t_die)
 		print_error_exit(INVALID_TIME_TO_SLEEP);
 }
 

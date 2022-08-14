@@ -32,3 +32,10 @@
 64	158	1660488821000000000	philosophers	1855ab54acd8cdfa
 1	54	1660488975000000000	CMakeFiles/philosophers.dir/philo/src/simulator/actions.c.o	73c8191bb8ef9f3c
 54	126	1660488975000000000	philosophers	1855ab54acd8cdfa
+1	56	1660489361000000000	CMakeFiles/philosophers.dir/philo/src/simulator/killer.c.o	24e8c299afdc9f2
+1	62	1660489361000000000	CMakeFiles/philosophers.dir/philo/src/simulator/actions.c.o	73c8191bb8ef9f3c
+62	133	1660489361000000000	philosophers	1855ab54acd8cdfa
+1	50	1660489382000000000	CMakeFiles/philosophers.dir/philo/src/simulator/actions.c.o	73c8191bb8ef9f3c
+50	120	1660489382000000000	philosophers	1855ab54acd8cdfa
+1	51	1660489607000000000	CMakeFiles/philosophers.dir/philo/src/input_parser/args_checker.c.o	c1f4846f423ca129
+51	115	1660489607000000000	philosophers	1855ab54acd8cdfa
