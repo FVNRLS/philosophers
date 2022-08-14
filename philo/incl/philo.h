@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 13:12:53 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/14 14:45:51 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/14 15:01:20 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ typedef struct s_phil
 	long			t_sleep;
 	long			n_eat;
 	bool			phil_died;
+	bool			die_msg_displayed;
 	struct timeval	t_current;
 	t_args			*args;
 	t_tstamps 		*tstamp;
@@ -70,11 +71,12 @@ void	check_number_times_eat(t_phil *phil);
 int		init_phils(t_phil *phil);
 void 	check_kill_phil(t_phil *phil);
 void	calc_res(t_phil *phil);
+void	print_input_data(t_phil *phil);
 
 //PHILOSOPHERS ACTIONS
 void	take_fork(t_phil *phil, int index);
 void	eat(t_phil *phil, int index);
-
-
+void	ph_sleep(t_phil *phil, int index);
+void	think(t_phil *phil, int index);
 
 #endif

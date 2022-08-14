@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   killer.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 14:47:44 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/14 14:47:44 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/14 16:14:15 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,14 @@ void	calc_res(t_phil *phil)
 
 void 	check_kill_phil(t_phil *phil)
 {
-	gettimeofday(&phil->t_current, NULL);
 	calc_res(phil);
 	if (phil->tstamp->res_ms >= phil->t_die && phil->phil_died == false)
 	{
-		printf("%ld ms philosopher %d died!\n", phil->tstamp->res_ms, phil->index);
-		print_input_data(phil);
+		if (phil->die_msg_displayed == false)
+		{
+			phil->die_msg_displayed = true;
+			printf("%ld ms philosopher %d died!\n", phil->tstamp->res_ms, phil->index);
+		}
 		phil->phil_died = true;
 		pthread_mutex_unlock(&phil->fork);
 		pthread_exit(EXIT_SUCCESS);
