@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 15:39:15 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/14 15:01:20 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/14 17:25:54 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	simulate_phil(t_phil *phil, int index)
 	think(phil, index);
 }
 
-void	*create_phil(void *arg)
+void	*start_phil(void *arg)
 {
 	t_phil 		*phil;
 	int			index;
@@ -34,28 +34,47 @@ void	*create_phil(void *arg)
 	return (NULL);
 }
 
-int	init_phils(t_phil *phil)
+void	init_phils(t_phil *phil)
 {
-	int i;
-
 	phil->phil = malloc((sizeof(int) * phil->n_phil));
 	phil->phil_died = false;
 	phil->die_msg_displayed = false;
 	phil->index = 0;
+}
+
+void	create_phils(t_phil *phil)
+{
+	int i;
+
 	i = 0;
 	while (i < phil->n_phil)
 	{
-		if (pthread_create(&phil->phil[i], NULL, &create_phil, phil) != 0)
-			return (EXIT_FAILURE);
+		if (pthread_create(&phil->phil[i], NULL, &start_phil, phil) != 0)
+		{
+			free(phil->phil);
+			phil->phil = NULL;
+			exit(EXIT_FAILURE);
+		}
 		i++;
 	}
 	i = 0;
 	while (i < phil->n_phil)
 	{
 		if (pthread_join(phil->phil[i], NULL) != 0)
-			return (EXIT_FAILURE);
+		{
+			free(phil->phil);
+			phil->phil = NULL;
+			exit(EXIT_FAILURE);
+		}
 		i++;
 	}
+}
+
+int	start_simulation(t_phil *phil)
+{
+
+	init_phils(phil);
+	create_phils(phil);
 	print_input_data(phil); //del!
 	free(phil->phil);
 	phil->phil = NULL;

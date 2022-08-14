@@ -32,7 +32,7 @@ void check_leaks()
 
 	parse_input(&phil);
 	pthread_mutex_init(&phil.fork, NULL);
-	init_phils(&phil);
+	start_simulation(&phil);
 	pthread_mutex_destroy(&phil.fork);
 
 

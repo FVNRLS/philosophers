@@ -39,3 +39,13 @@
 50	120	1660489382000000000	philosophers	1855ab54acd8cdfa
 1	51	1660489607000000000	CMakeFiles/philosophers.dir/philo/src/input_parser/args_checker.c.o	c1f4846f423ca129
 51	115	1660489607000000000	philosophers	1855ab54acd8cdfa
+2	85	1660490936000000000	CMakeFiles/philosophers.dir/philo/src/simulator/actions.c.o	73c8191bb8ef9f3c
+1	104	1660490936000000000	CMakeFiles/philosophers.dir/philo/src/main.c.o	d56db825745e0444
+2	104	1660490936000000000	CMakeFiles/philosophers.dir/philo/src/simulator/simulator.c.o	7a47d8222c022976
+2	137	1660490936000000000	CMakeFiles/philosophers.dir/philo/src/input_parser/input_parser.c.o	cb0823488c4a4db6
+2	144	1660490936000000000	CMakeFiles/philosophers.dir/philo/src/input_parser/args_checker.c.o	c1f4846f423ca129
+2	155	1660490936000000000	CMakeFiles/philosophers.dir/philo/src/simulator/killer.c.o	24e8c299afdc9f2
+2	155	1660490936000000000	CMakeFiles/philosophers.dir/philo/src/error_manager.c.o	7fd9b3d0d02db59
+3	155	1660490936000000000	CMakeFiles/philosophers.dir/philo/tools/ft_check_invalid_chars.c.o	bfc735bc531c7bb9
+3	164	1660490936000000000	CMakeFiles/philosophers.dir/philo/tools/ft_atol.c.o	dbfbe56109347ccc
+164	236	1660490937000000000	philosophers	1855ab54acd8cdfa

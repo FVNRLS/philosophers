@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 13:12:53 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/14 15:01:20 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/14 15:57:50 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	check_time_to_sleep(t_phil *phil);
 void	check_number_times_eat(t_phil *phil);
 
 //SIMULATION FUNCTIONS
-int		init_phils(t_phil *phil);
+int		start_simulation(t_phil *phil);
 void 	check_kill_phil(t_phil *phil);
 void	calc_res(t_phil *phil);
 void	print_input_data(t_phil *phil);
