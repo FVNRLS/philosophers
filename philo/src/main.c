@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 13:11:48 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/12 19:46:26 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/13 19:34:28 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,21 @@ void check_leaks()
  {
 //	atexit(check_leaks);
 
-	t_phil	phil;
-	t_args	args;
+	t_phil		phil;
+	t_args		args;
+	t_tstamps	tstamp;
 
+	phil.tstamp = &tstamp;
 	phil.args = &args;
 	args.ac = argc;
 	args.av = argv;
 
 	parse_input(&phil);
-//	init_forks();
-//	init_phil(); //create threads with while loop
+	init_fork(&phil);
+	init_phils(&phil);
+	destroy_fork(&phil);
 
 
- 	return (0);
+
+ 	return (EXIT_SUCCESS);
  }

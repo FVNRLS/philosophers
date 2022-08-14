@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 15:34:24 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/12 20:05:50 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/13 11:22:49 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,10 @@ void	parse_input(t_phil *phil)
 {
 	int 	i;
 	char 	*arg;
-//	if (phil->args->ac != 6)
-//		print_error_exit(INVALID_NUMBER_OF_ARGUMENTS);
-	gettimeofday(&phil->t_current, NULL);
-	phil->t_start = phil->t_current.tv_usec;
-	printf("start time: %d\n", phil->t_current.tv_usec);
+	if (phil->args->ac < 5 ||  phil->args->ac > 6)
+		print_error_exit(INVALID_NUMBER_OF_ARGUMENTS);
 	i = 1;
-	while (i < 3) // i < 6
+	while (i < phil->args->ac)
 	{
 		arg = phil->args->av[i];
 		ft_check_invalid_chars(arg);
@@ -39,4 +36,7 @@ void	parse_input(t_phil *phil)
 	check_phil_num(phil);
 	check_time_to_die(phil);
 	check_time_to_eat(phil);
+	check_time_to_sleep(phil);
+	if (phil->args->ac == 6)
+		check_number_times_eat(phil);
 }

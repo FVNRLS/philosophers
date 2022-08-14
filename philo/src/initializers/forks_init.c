@@ -1,30 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   forks_initializer.c                                :+:      :+:    :+:   */
+/*   forks_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 15:38:06 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/13 12:08:22 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/13 13:18:22 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incl/philo.h"
 
-
-
-static void	init_left_fork(t_phil *phil)
+void	init_fork(t_phil *phil)
 {
-
-}
-
-static void	init_right_fork(t_phil *phil)
-{
-
-}
-
-void	init_forks(t_phil *phil)
-{
-
+	pthread_mutex_init(&phil->fork, NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 15:45:18 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/12 19:52:34 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/13 11:13:47 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,7 @@ void	print_error_exit(int error_key)
 		printf("Error: invalid time to die.");
 	else if (error_key == INVALID_TIME_TO_EAT)
 		printf("Error: invalid time to eat.");
+	else if (error_key == INVALID_NUMBER_TIMES_EAT)
+		printf("Error: invalid number of times to eat.");
 	exit(EXIT_FAILURE);
 }

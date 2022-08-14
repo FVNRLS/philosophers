@@ -61,7 +61,9 @@
 				7,
 				8,
 				9,
-				10
+				10,
+				11,
+				12
 			]
 		}
 	],
@@ -103,7 +105,9 @@
 				7,
 				8,
 				9,
-				10
+				10,
+				11,
+				12
 			]
 		},
 		{
@@ -142,13 +146,25 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "philo/src/initializers/forks_initializer.c",
+			"path" : "philo/src/initializers/forks_init.c",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "philo/src/initializers/phils_initilaizer.c",
+			"path" : "philo/src/initializers/phils_init.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "philo/src/destructors/forks_destr.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "philo/src/destructors/phils_destr.c",
 			"sourceGroupIndex" : 0
 		},
 		{
