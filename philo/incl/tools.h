@@ -18,7 +18,5 @@
 long	ft_atol(const char *str);
 void	ft_check_invalid_chars(char *str);
 bool	ft_is_digit(char c);
-int		ft_strlen(const char *s);
-
 
 #endif
