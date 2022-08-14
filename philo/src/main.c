@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 13:11:48 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/13 19:34:28 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/14 11:00:16 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,9 @@ void check_leaks()
 	args.av = argv;
 
 	parse_input(&phil);
-	init_fork(&phil);
+	pthread_mutex_init(&phil.fork, NULL);
 	init_phils(&phil);
-	destroy_fork(&phil);
-
+	pthread_mutex_destroy(&phil.fork);
 
 
  	return (EXIT_SUCCESS);

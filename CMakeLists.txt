@@ -14,13 +14,10 @@ add_executable(
         philosophers philo/src/input_parser/input_parser.c
         philosophers philo/src/input_parser/args_checker.c
 
-        #INITIALIZERS
-        philosophers philo/src/initializers/forks_init.c
-        philosophers philo/src/initializers/phils_init.c
-
-        #DESTRUCTORS
-        philosophers philo/src/destructors/forks_destr.c
-        philosophers philo/src/destructors/phils_destr.c
+        #SIMULATOR
+        philosophers philo/src/simulator/actions.c
+        philosophers philo/src/simulator/simulator.c
+        philosophers philo/src/simulator/killer.c
 
         #ERROR MANAGER
         philosophers philo/src/error_manager.c

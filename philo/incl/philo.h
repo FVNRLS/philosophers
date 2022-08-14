@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 13:12:53 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/14 13:27:47 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/14 14:45:51 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,13 +66,15 @@ void	check_time_to_eat(t_phil *phil);
 void	check_time_to_sleep(t_phil *phil);
 void	check_number_times_eat(t_phil *phil);
 
-
-//FORKS MANAGER
-void	init_fork(t_phil *phil);
-void	destroy_fork(t_phil *phil);
-
-//PHILOSOPHERS MANAGER
+//SIMULATION FUNCTIONS
 int		init_phils(t_phil *phil);
+void 	check_kill_phil(t_phil *phil);
+void	calc_res(t_phil *phil);
+
+//PHILOSOPHERS ACTIONS
+void	take_fork(t_phil *phil, int index);
+void	eat(t_phil *phil, int index);
+
 
 
 #endif
