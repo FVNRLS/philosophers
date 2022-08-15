@@ -6,43 +6,47 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 15:39:15 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/14 17:25:54 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/15 16:05:23 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incl/philo.h"
 
-void	simulate_phil(t_phil *phil, int index)
+static void	simulate_phil(t_phil *phil, t_id *id)
 {
-	take_fork(phil, index);
-	eat(phil, index);
-	ph_sleep(phil, index);
-	think(phil, index);
+	take_forks(phil, id);
+	eat(phil, id);
+	ph_sleep(phil, id);
+	think(phil, id);
 }
 
 void	*start_phil(void *arg)
 {
 	t_phil 		*phil;
-	int			index;
+	t_id		id;
 
 	phil = &(*(t_phil*)arg);
 	phil->index++;
-	index = phil->index;
-	phil->tstamp->res_us = 0;
-	while (phil->phil_died == false)
-		simulate_phil(phil, index);
+	id.phil = phil->index;
+	id.fork_left = id.phil;
+	if (id.phil == phil->n_phil)
+		id.fork_right = 1;
+	else
+		id.fork_right = id.phil + 1;
+	while (phil->died == false)
+		simulate_phil(phil, &id);
 	return (NULL);
 }
 
 void	init_phils(t_phil *phil)
 {
-	phil->phil = malloc((sizeof(int) * phil->n_phil));
-	phil->phil_died = false;
+	phil->phil = malloc((sizeof(pthread_t) * phil->n_phil));
+	phil->died = false;
 	phil->die_msg_displayed = false;
 	phil->index = 0;
 }
 
-void	create_phils(t_phil *phil)
+static void	create_phils(t_phil *phil)
 {
 	int i;
 
@@ -75,7 +79,7 @@ int	start_simulation(t_phil *phil)
 
 	init_phils(phil);
 	create_phils(phil);
-	print_input_data(phil); //del!
+//	print_input_data(phil); //del!
 	free(phil->phil);
 	phil->phil = NULL;
 	return (EXIT_SUCCESS);

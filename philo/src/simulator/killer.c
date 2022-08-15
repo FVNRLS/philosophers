@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 14:47:44 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/14 16:16:16 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/15 12:42:55 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,45 +21,44 @@ void	print_input_data(t_phil *phil)
 	printf("num times to eat: 	%ld\n", phil->n_eat);
 }
 
-void	calc_res(t_phil *phil)
+void	get_current_time(t_phil *phil)
 {
-	t_tstamps	*tstamp;
 
-	tstamp = phil->tstamp;
-	if (tstamp->res_us == 0)
-	{
-		gettimeofday(&phil->t_current, NULL);
-		tstamp->t_last = phil->t_current.tv_usec;
-	}
-	else
-		tstamp->t_last = tstamp->t_current;
-	gettimeofday(&phil->t_current, NULL);
-	tstamp->t_current = phil->t_current.tv_usec;
-	if (tstamp->t_current >= tstamp->t_last)
-		tstamp->diff = tstamp->t_current - tstamp->t_last;
-	else if (tstamp->t_current < tstamp->t_last)
-		tstamp->diff = (1000000 - tstamp->t_last) + tstamp->t_current;
-	tstamp->res_us += tstamp->diff;
-	tstamp->res_ms = tstamp->res_us / 1000;
+	gettimeofday(&phil->time, NULL);
+	phil->tstamp->t_current =
+			((phil->time.tv_sec * 1000) + (phil->time.tv_usec / 1000));
 }
 
-void 	check_kill_phil(t_phil *phil)
+static void	get_time_diff(t_phil *phil)
 {
-	calc_res(phil);
-	if (phil->tstamp->res_ms >= phil->t_die && phil->phil_died == false)
+	get_current_time(phil);
+	phil->tstamp->t_diff = phil->tstamp->t_current - phil->tstamp->t_last_eat;
+
+//	//TODO: del!
+//	printf("t_cur:		%ld\n", phil->tstamp->t_current);
+//	printf("t_last_eat:	%ld\n", phil->tstamp->t_last_eat);
+//	printf("t_diff:		%ld\n", phil->tstamp->t_diff);
+}
+
+bool	check_phil_died(t_phil *phil)
+{
+	get_time_diff(phil);
+	if (phil->tstamp->t_diff >= phil->t_die && phil->died == false)
 	{
 		if (phil->die_msg_displayed == false)
 		{
 			phil->die_msg_displayed = true;
-			printf("%ldms	%d died!\n", phil->tstamp->res_ms, phil->index);
+			printf("%ld %d died\n", phil->tstamp->t_current, phil->index);
 		}
-		phil->phil_died = true;
-		pthread_mutex_unlock(&phil->fork);
-		pthread_exit(EXIT_SUCCESS);
+		phil->died = true;
+//		pthread_mutex_unlock(&phil->fork);
+		return (true);
 	}
-	else if (phil->phil_died == true)
+	else if (phil->died == true)
 	{
-		pthread_mutex_unlock(&phil->fork);
-		pthread_exit(EXIT_SUCCESS);
+//		pthread_mutex_unlock(&phil->fork);
+		return (true);
 	}
+	else
+		return (false);
 }

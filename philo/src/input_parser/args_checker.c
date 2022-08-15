@@ -22,39 +22,26 @@ void	check_phil_num(t_phil *phil)
 }
 
 /*
- * Takes input time value in seconds in ms.
+ * Takes input time value in milliseconds.
  * */
 void	check_time_to_die(t_phil *phil)
 {
-	long	t_input;
-
-	t_input = ft_atol(phil->args->av[2]);
-	if (t_input < 1)
+	phil->t_die = ft_atol(phil->args->av[2]);
+	if (phil->t_die < 1)
 		print_error_exit(INVALID_TIME_TO_DIE);
-	phil->t_die = t_input;
 }
 
 void	check_time_to_eat(t_phil *phil)
 {
-	long	t_input;
-
-	t_input = ft_atol(phil->args->av[3]);
-	if (t_input < 1)
-		print_error_exit(INVALID_TIME_TO_EAT);
-	phil->t_eat = t_input;
-	if (phil->t_eat >= phil->t_die)
+	phil->t_eat = ft_atol(phil->args->av[3]);
+	if (phil->t_eat < 1)
 		print_error_exit(INVALID_TIME_TO_EAT);
 }
 
 void	check_time_to_sleep(t_phil *phil)
 {
-	long	t_input;
-
-	t_input = ft_atol(phil->args->av[4]);
-	if (t_input < 1)
-		print_error_exit(INVALID_TIME_TO_SLEEP);
-	phil->t_sleep = t_input;
-	if (phil->t_sleep >= phil->t_die)
+	phil->t_sleep = ft_atol(phil->args->av[4]);
+	if (phil->t_sleep < 1)
 		print_error_exit(INVALID_TIME_TO_SLEEP);
 }
 
