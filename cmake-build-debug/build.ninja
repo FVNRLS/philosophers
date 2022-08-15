@@ -91,8 +91,8 @@ build CMakeFiles/philosophers.dir/philo/src/simulator/mutex_controller.c.o: C_CO
   OBJECT_DIR = CMakeFiles/philosophers.dir
   OBJECT_FILE_DIR = CMakeFiles/philosophers.dir/philo/src/simulator
 
-build CMakeFiles/philosophers.dir/philo/src/error_manager.c.o: C_COMPILER__philosophers_Debug /Users/rmazurit/Documents/42_Projects/philosophers/philo/src/error_manager.c || cmake_object_order_depends_target_philosophers
-  DEP_FILE = CMakeFiles/philosophers.dir/philo/src/error_manager.c.o.d
+build CMakeFiles/philosophers.dir/philo/src/message_printer.c.o: C_COMPILER__philosophers_Debug /Users/rmazurit/Documents/42_Projects/philosophers/philo/src/message_printer.c || cmake_object_order_depends_target_philosophers
+  DEP_FILE = CMakeFiles/philosophers.dir/philo/src/message_printer.c.o.d
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -mmacosx-version-min=10.15 -std=gnu99
   OBJECT_DIR = CMakeFiles/philosophers.dir
   OBJECT_FILE_DIR = CMakeFiles/philosophers.dir/philo/src
@@ -129,7 +129,7 @@ build CMakeFiles/philosophers.dir/philo/tools/ft_usleep.c.o: C_COMPILER__philoso
 #############################################
 # Link the executable philosophers
 
-build philosophers: C_EXECUTABLE_LINKER__philosophers_Debug CMakeFiles/philosophers.dir/philo/src/main.c.o CMakeFiles/philosophers.dir/philo/src/input_parser/input_parser.c.o CMakeFiles/philosophers.dir/philo/src/input_parser/args_checker.c.o CMakeFiles/philosophers.dir/philo/src/simulator/actions.c.o CMakeFiles/philosophers.dir/philo/src/simulator/simulator.c.o CMakeFiles/philosophers.dir/philo/src/simulator/killer.c.o CMakeFiles/philosophers.dir/philo/src/simulator/mutex_controller.c.o CMakeFiles/philosophers.dir/philo/src/error_manager.c.o CMakeFiles/philosophers.dir/philo/tools/ft_atol.c.o CMakeFiles/philosophers.dir/philo/tools/ft_check_invalid_chars.c.o CMakeFiles/philosophers.dir/philo/tools/ft_is_digit.c.o CMakeFiles/philosophers.dir/philo/tools/ft_usleep.c.o
+build philosophers: C_EXECUTABLE_LINKER__philosophers_Debug CMakeFiles/philosophers.dir/philo/src/main.c.o CMakeFiles/philosophers.dir/philo/src/input_parser/input_parser.c.o CMakeFiles/philosophers.dir/philo/src/input_parser/args_checker.c.o CMakeFiles/philosophers.dir/philo/src/simulator/actions.c.o CMakeFiles/philosophers.dir/philo/src/simulator/simulator.c.o CMakeFiles/philosophers.dir/philo/src/simulator/killer.c.o CMakeFiles/philosophers.dir/philo/src/simulator/mutex_controller.c.o CMakeFiles/philosophers.dir/philo/src/message_printer.c.o CMakeFiles/philosophers.dir/philo/tools/ft_atol.c.o CMakeFiles/philosophers.dir/philo/tools/ft_check_invalid_chars.c.o CMakeFiles/philosophers.dir/philo/tools/ft_is_digit.c.o CMakeFiles/philosophers.dir/philo/tools/ft_usleep.c.o
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -mmacosx-version-min=10.15
   OBJECT_DIR = CMakeFiles/philosophers.dir
   POST_BUILD = :

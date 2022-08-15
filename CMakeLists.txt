@@ -17,7 +17,7 @@ add_executable(
         ./philo/src/simulator/mutex_controller.c
 
         #ERROR MANAGER
-        ./philo/src/error_manager.c
+        philo/src/message_printer.c
 
         #TOOLS
         philo/tools/ft_atol.c
