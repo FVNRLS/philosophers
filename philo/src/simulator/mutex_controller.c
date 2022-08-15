@@ -37,4 +37,6 @@ void	destroy_mutexes(t_phil *phil)
 		pthread_mutex_destroy(&phil->forks[i]);
 		i++;
 	}
+	free(phil->forks);
+	phil->forks = NULL;
 }

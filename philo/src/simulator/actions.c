@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 14:43:23 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/15 17:39:11 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/15 17:57:31 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ void	ph_sleep(t_phil *phil, t_id *id)
 
 void	think(t_phil *phil, t_id *id)
 {
-	check_phil_died(phil, id);
 	if (phil->died == false)
 		print_status(phil, id, IS_THINKING);
 }

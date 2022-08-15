@@ -25,3 +25,10 @@
 4	203	1660579059000000000	CMakeFiles/philosophers.dir/philo/src/main.c.o	d56db825745e0444
 5	205	1660579059000000000	CMakeFiles/philosophers.dir/philo/src/simulator/killer.c.o	24e8c299afdc9f2
 205	306	1660579059000000000	philosophers	1df21e70a9eb6a7
+8	132	1660581734000000000	CMakeFiles/philosophers.dir/philo/src/simulator/mutex_controller.c.o	fba6f71aeaed21d2
+133	246	1660581735000000000	philosophers	1df21e70a9eb6a7
+1	66	1660583766000000000	CMakeFiles/philosophers.dir/philo/src/message_printer.c.o	646eac80a3025506
+66	184	1660583766000000000	philosophers	1df21e70a9eb6a7
+1	55	1660583867000000000	CMakeFiles/philosophers.dir/philo/src/simulator/simulator.c.o	7a47d8222c022976
+1	67	1660583867000000000	CMakeFiles/philosophers.dir/philo/src/simulator/actions.c.o	73c8191bb8ef9f3c
+67	132	1660583867000000000	philosophers	1df21e70a9eb6a7

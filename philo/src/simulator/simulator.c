@@ -14,10 +14,12 @@
 
 static void	simulate_phil(t_phil *phil, t_id *id)
 {
+	check_phil_died(phil, id);
 	take_forks(phil, id);
 	eat(phil, id);
 	ph_sleep(phil, id);
 	think(phil, id);
+	check_phil_died(phil, id);
 }
 
 void	*start_phil(void *arg)
