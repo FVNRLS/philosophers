@@ -1,0 +1,16 @@
+# ninja log v5
+7	232	1660575637000000000	CMakeFiles/philosophers.dir/philo/tools/ft_check_invalid_chars.c.o	bfc735bc531c7bb9
+7	185	1660575637000000000	CMakeFiles/philosophers.dir/philo/tools/ft_usleep.c.o	895e294d0bb546a7
+6	181	1660575637000000000	CMakeFiles/philosophers.dir/philo/src/error_manager.c.o	7fd9b3d0d02db59
+6	225	1660575637000000000	CMakeFiles/philosophers.dir/philo/src/simulator/killer.c.o	24e8c299afdc9f2
+5	216	1660575637000000000	CMakeFiles/philosophers.dir/philo/src/simulator/actions.c.o	73c8191bb8ef9f3c
+7	109	1660575637000000000	CMakeFiles/philosophers.dir/philo/tools/ft_is_digit.c.o	658859867f77cbed
+0	88	1660575391000000000	CMakeFiles/philosophers.dir/philo/src/main.c.o	d56db825745e0444
+232	284	1660575637000000000	philosophers	5ccfb78810a0bc1a
+6	225	1660575637000000000	CMakeFiles/philosophers.dir/philo/src/simulator/simulator.c.o	7a47d8222c022976
+6	225	1660575637000000000	CMakeFiles/philosophers.dir/philo/src/simulator/mutex_controller.c.o	fba6f71aeaed21d2
+0	130	1660575658000000000	build.ninja	612a43b6af5db807
+1	94	1660575560000000000	CMakeFiles/philosophers.dir/philo/src/input_parser/args_checker.c.o	c1f4846f423ca129
+6	181	1660575637000000000	CMakeFiles/philosophers.dir/philo/tools/ft_atol.c.o	dbfbe56109347ccc
+5	104	1660575521000000000	CMakeFiles/philosophers.dir/philo/src/input_parser/input_parser.c.o	cb0823488c4a4db6
+0	168	1660575658000000000	build.ninja	612a43b6af5db807
