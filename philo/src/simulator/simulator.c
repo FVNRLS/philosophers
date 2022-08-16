@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 15:39:15 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/16 12:32:58 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/16 17:47:24 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ static void	simulate_phil(t_phil *phil, t_id *id)
 	take_forks(phil, id);
 	eat(phil, id);
 	ph_sleep(phil, id);
+	check_phil_died(phil, id);
 	think(phil, id);
 	check_phil_died(phil, id);
 }
@@ -30,11 +31,11 @@ void	*start_phil(void *arg)
 	phil = &(*(t_phil*)arg);
 	pthread_mutex_lock(&phil->index_incr);
 	phil->index++;
-	pthread_mutex_unlock(&phil->index_incr);
 	id.phil = phil->index;
+	pthread_mutex_unlock(&phil->index_incr);
 	id.fork_left = id.phil;
 	if (id.phil == phil->n_phil)
-		id.fork_right = 1;
+		id.fork_right = 0;
 	else
 		id.fork_right = id.phil + 1;
 	if (id.phil % 2 == 0)
@@ -82,7 +83,6 @@ static void	create_phils(t_phil *phil)
 
 int	start_simulation(t_phil *phil)
 {
-
 	init_phils(phil);
 	create_phils(phil);
 	free(phil->phil);

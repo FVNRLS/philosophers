@@ -3,8 +3,7 @@ project(philosophers C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(
-        philosophers ./philo/src/main.c
+add_executable(philosophers ./philo/src/main.c
 
         #INPUT PARSER
         ./philo/src/input_parser/input_parser.c
