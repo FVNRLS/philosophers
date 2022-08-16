@@ -14,7 +14,6 @@
 
 void	get_current_time(t_phil *phil)
 {
-
 	gettimeofday(&phil->time, NULL);
 	phil->tstamp->t_current =
 			((phil->time.tv_sec * 1000) + (phil->time.tv_usec / 1000));
@@ -37,14 +36,10 @@ bool	check_phil_died(t_phil *phil, t_id *id)
 			phil->die_msg_displayed = true;
 		}
 		phil->died = true;
-//		pthread_mutex_unlock(&phil->fork);
 		return (true);
 	}
 	else if (phil->died == true)
-	{
-//		pthread_mutex_unlock(&phil->fork);
 		return (true);
-	}
 	else
 		return (false);
 }

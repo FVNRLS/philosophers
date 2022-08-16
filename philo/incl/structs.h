@@ -55,6 +55,7 @@ typedef struct s_phil
 	long			n_eat;
 	bool			died;
 	bool			die_msg_displayed;
+	pthread_mutex_t	index_incr;
 	struct timeval	time;
 	t_args			*args;
 	t_tstamps 		*tstamp;

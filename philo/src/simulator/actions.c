@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 14:43:23 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/15 17:57:31 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/16 12:01:38 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ void	eat(t_phil *phil, t_id *id)
 	if (phil->died == false)
 		print_status(phil, id, IS_EATING);
 	ft_usleep(phil->t_eat);
-	get_current_time(phil);
-	phil->tstamp->t_last_eat = phil->tstamp->t_current;
 	pthread_mutex_unlock(&phil->forks[id->fork_right]);
 	pthread_mutex_unlock(&phil->forks[id->fork_left]);
+	get_current_time(phil);
+	phil->tstamp->t_last_eat = phil->tstamp->t_current;
 }
 
 void	ph_sleep(t_phil *phil, t_id *id)

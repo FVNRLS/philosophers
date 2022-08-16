@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 15:39:15 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/15 16:05:23 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/16 12:32:58 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,17 @@ void	*start_phil(void *arg)
 	t_id		id;
 
 	phil = &(*(t_phil*)arg);
+	pthread_mutex_lock(&phil->index_incr);
 	phil->index++;
+	pthread_mutex_unlock(&phil->index_incr);
 	id.phil = phil->index;
 	id.fork_left = id.phil;
 	if (id.phil == phil->n_phil)
 		id.fork_right = 1;
 	else
 		id.fork_right = id.phil + 1;
+	if (id.phil % 2 == 0)
+		ft_usleep(phil->t_eat / 2);
 	while (phil->died == false)
 		simulate_phil(phil, &id);
 	return (NULL);
@@ -45,7 +49,7 @@ void	init_phils(t_phil *phil)
 	phil->phil = malloc((sizeof(pthread_t) * phil->n_phil));
 	phil->died = false;
 	phil->die_msg_displayed = false;
-	phil->index = 0;
+	phil->index = -1;
 }
 
 static void	create_phils(t_phil *phil)
@@ -81,7 +85,6 @@ int	start_simulation(t_phil *phil)
 
 	init_phils(phil);
 	create_phils(phil);
-//	print_input_data(phil); //del!
 	free(phil->phil);
 	phil->phil = NULL;
 	return (EXIT_SUCCESS);

@@ -16,6 +16,7 @@ void	init_mutexes(t_phil *phil)
 {
 	int	i;
 
+	pthread_mutex_init(&phil->index_incr, NULL);
 	pthread_mutex_init(&phil->std_out, NULL);
 	phil->forks = malloc((sizeof(pthread_mutex_t) * phil->n_phil));
 	i = 0;

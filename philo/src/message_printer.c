@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 15:45:18 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/15 17:39:11 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/16 12:47:12 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,9 @@ void	print_status(t_phil *phil, t_id *id, int status)
 {
 	pthread_mutex_lock(&phil->std_out);
 	get_current_time(phil);
-	if (status == LEFT_FORK_TAKEN || status == RIGHT_FORK_TAKEN)
+	if (status == PHIL_DIED)
+		printf("%ld %d died\n", phil->tstamp->t_current, phil->index);
+	else if (status == LEFT_FORK_TAKEN || status == RIGHT_FORK_TAKEN)
 		printf("%ld %d has taken a fork\n", phil->tstamp->t_current, id->phil);
 	else if (status == IS_EATING)
 		printf("%ld %d is eating\n", phil->tstamp->t_current, id->phil);
@@ -41,7 +43,5 @@ void	print_status(t_phil *phil, t_id *id, int status)
 		printf("%ld %d is sleeping\n", phil->tstamp->t_current, id->phil);
 	else if (status == IS_THINKING)
 		printf("%ld %d is thinking\n", phil->tstamp->t_current, id->phil);
-	else if (status == PHIL_DIED)
-		printf("%ld %d died\n", phil->tstamp->t_current, phil->index);
 	pthread_mutex_unlock(&phil->std_out);
 }
