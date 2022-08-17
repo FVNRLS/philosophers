@@ -14,31 +14,27 @@
 
 void	get_current_time(t_phil *phil)
 {
-	gettimeofday(&phil->time, NULL);
-	phil->tstamp->t_current =
-			((phil->time.tv_sec * 1000) + (phil->time.tv_usec / 1000));
+	gettimeofday(&phil->data->time, NULL);
+	phil->data->t_current =
+			((phil->data->time.tv_sec * 1000) + (phil->data->time.tv_usec / 1000));
 }
 
 static void	get_time_diff(t_phil *phil)
 {
 	get_current_time(phil);
-	phil->tstamp->t_diff = phil->tstamp->t_current - phil->tstamp->t_last_eat;
+	phil->data->t_diff = phil->data->t_current - phil->data->t_last_eat;
 }
 
-bool	check_phil_died(t_phil *phil, t_id *id)
+bool	check_phil_died(t_phil *phil)
 {
 	get_time_diff(phil);
-	if (phil->tstamp->t_diff >= phil->t_die && phil->died == false)
+	if (phil->data->t_diff >= phil->data->t_die && phil->data->died == false)
 	{
-		if (phil->die_msg_displayed == false)
-		{
-			print_status(phil, id, PHIL_DIED);
-			phil->die_msg_displayed = true;
-		}
-		phil->died = true;
+			print_status(phil, PHIL_DIED);
+		phil->data->died = true;
 		return (true);
 	}
-	else if (phil->died == true)
+	else if (phil->data->died == true)
 		return (true);
 	else
 		return (false);

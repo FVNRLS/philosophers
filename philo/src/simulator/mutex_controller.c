@@ -6,38 +6,40 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 15:20:06 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/15 15:30:02 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/17 11:40:03 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incl/philo.h"
 
-void	init_mutexes(t_phil *phil)
+int	init_mutexes(t_data *data)
 {
 	int	i;
 
-	pthread_mutex_init(&phil->index_incr, NULL);
-	pthread_mutex_init(&phil->std_out, NULL);
-	phil->forks = malloc((sizeof(pthread_mutex_t) * phil->n_phil));
+	pthread_mutex_init(&data->std_out, NULL);
+	data->forks = malloc((sizeof(pthread_mutex_t) * data->n_phil));
+	if (!data->forks)
+		return (EXIT_FAILURE);
 	i = 0;
-	while (i < phil->n_phil)
+	while (i < data->n_phil)
 	{
-		pthread_mutex_init(&phil->forks[i], NULL);
+		pthread_mutex_init(&data->forks[i], NULL);
 		i++;
 	}
+	return (EXIT_SUCCESS);
 }
 
-void	destroy_mutexes(t_phil *phil)
+void	destroy_mutexes(t_data *data)
 {
 	int	i;
 
-	pthread_mutex_destroy(&phil->std_out);
+	pthread_mutex_destroy(&data->std_out);
 	i = 0;
-	while (i < phil->n_phil)
+	while (i < data->n_phil)
 	{
-		pthread_mutex_destroy(&phil->forks[i]);
+		pthread_mutex_destroy(&data->forks[i]);
 		i++;
 	}
-	free(phil->forks);
-	phil->forks = NULL;
+	free(data->forks);
+	data->forks = NULL;
 }
