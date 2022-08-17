@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 13:11:48 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/15 15:45:39 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/17 16:22:44 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,20 +20,22 @@ void check_leaks()
  int	main(int argc, char **argv)
  {
 //	atexit(check_leaks);
-
-	t_phil		phil;
+	t_data		data;
 	t_args		args;
-	t_tstamps	tstamp;
+	int 		exit_ret;
 
-	phil.tstamp = &tstamp;
-	phil.args = &args;
+	data.args = &args;
 	args.ac = argc;
 	args.av = argv;
-
-	parse_input(&phil);
-	init_mutexes(&phil);
-	start_simulation(&phil);
-	destroy_mutexes(&phil);
-
- 	return (EXIT_SUCCESS);
+	exit_ret = parse_input(&data);
+	if (exit_ret == EXIT_FAILURE)
+		 return (EXIT_FAILURE);
+	exit_ret = init_mutexes(&data);
+	if (exit_ret == EXIT_FAILURE)
+		return (EXIT_FAILURE);
+	exit_ret = start_simulation(&data);
+	destroy_mutexes(&data);
+	if (exit_ret == EXIT_FAILURE)
+		return (EXIT_FAILURE);
+	return (EXIT_SUCCESS);
  }

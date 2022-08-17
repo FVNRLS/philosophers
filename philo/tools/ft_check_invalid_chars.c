@@ -21,21 +21,31 @@
 		2) more than 1 minus sign was found.
 		3) The argument is not a digit.
 */
-void	ft_check_invalid_chars(char *str)
+bool	ft_check_invalid_chars(char *str)
 {
 	int	i;
 
 	i = 0;
 	if (!str || str[0] == '\0')
-		print_error_exit(INVALID_CHARACTERS_FOUND);
+	{
+		print_error(INVALID_CHARACTERS_FOUND);
+		return (false);
+	}
 	if (str[i] == '-')
 		i++;
 	if (str[0] == '-' && str[1] == '\0')
-		print_error_exit(INVALID_CHARACTERS_FOUND);
+	{
+		print_error(INVALID_CHARACTERS_FOUND);
+		return (false);
+	}
 	while (str[i] != '\0')
 	{
 		if (ft_is_digit(str[i]) == false)
-			print_error_exit(INVALID_CHARACTERS_FOUND);
+		{
+			print_error(INVALID_CHARACTERS_FOUND);
+			return (false);
+		}
 		i++;
 	}
+	return (true);
 }

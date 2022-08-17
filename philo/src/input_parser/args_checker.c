@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 19:31:10 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/14 13:20:33 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/17 11:06:23 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,43 +14,66 @@
 
 //TODO: plan dependencies and edge cases: time to die vs eat and sleep and relations between
 
-void	check_phil_num(t_phil *phil)
+bool	check_phil_num(t_data *data)
 {
-	phil->n_phil = (int)ft_atol(phil->args->av[1]);
-	if (phil->n_phil < 1 || phil->n_phil > MAX_THREADS)
-		print_error_exit(INVALID_NUMBER_OF_PHILOSOPHERS);
+	data->n_phil = (int)ft_atol(data->args->av[1]);
+	if (data->n_phil < 1 || data->n_phil > MAX_THREADS)
+	{
+		print_error(INVALID_NUMBER_OF_PHILOSOPHERS);
+		return (false);
+	}
+	return (true);
 }
 
 /*
  * Takes input time value in milliseconds.
  * */
-void	check_time_to_die(t_phil *phil)
+bool	check_time_to_die(t_data *data)
 {
-	phil->t_die = ft_atol(phil->args->av[2]);
-	if (phil->t_die < 1)
-		print_error_exit(INVALID_TIME_TO_DIE);
+	data->t_die = ft_atol(data->args->av[2]);
+	if (data->t_die < 1)
+	{
+		print_error(INVALID_TIME_TO_DIE);
+		return (false);
+	}
+	return (true);
 }
 
-void	check_time_to_eat(t_phil *phil)
+bool	check_time_to_eat(t_data *data)
 {
-	phil->t_eat = ft_atol(phil->args->av[3]);
-	if (phil->t_eat < 1)
-		print_error_exit(INVALID_TIME_TO_EAT);
+	data->t_eat = ft_atol(data->args->av[3]);
+	if (data->t_eat < 1)
+	{
+		print_error(INVALID_TIME_TO_EAT);
+		return (false);
+	}
+	return (true);
 }
 
-void	check_time_to_sleep(t_phil *phil)
+bool	check_time_to_sleep(t_data *data)
 {
-	phil->t_sleep = ft_atol(phil->args->av[4]);
-	if (phil->t_sleep < 1)
-		print_error_exit(INVALID_TIME_TO_SLEEP);
+	data->t_sleep = ft_atol(data->args->av[4]);
+	if (data->t_sleep < 1)
+	{
+		print_error(INVALID_TIME_TO_SLEEP);
+		return (false);
+	}
+	return (true);
 }
 
 //TODO: set relations here
-void	check_number_times_eat(t_phil *phil)
+bool	check_number_times_eat(t_data *data)
 {
-	phil->n_eat = ft_atol(phil->args->av[5]);
-	if (phil->n_eat < 1)
-		print_error_exit(INVALID_NUMBER_TIMES_EAT);
-	if ((phil->n_eat * phil->t_eat) > phil->t_die)
-		print_error_exit(INVALID_NUMBER_TIMES_EAT);
+	data->n_eat = ft_atol(data->args->av[5]);
+	if (data->n_eat < 1)
+	{
+		print_error(INVALID_NUMBER_TIMES_EAT);
+		return (false);
+	}
+	if ((data->n_eat * data->t_eat) > data->t_die)
+	{
+		print_error(INVALID_NUMBER_TIMES_EAT);
+		return (false);
+	}
+	return (true);
 }

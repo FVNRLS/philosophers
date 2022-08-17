@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 15:39:15 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/17 16:34:18 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/17 16:48:30 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void	*simulate(void *arg)
 
 	if (phil->id % 2 == 0)
 		ft_usleep(phil->data->t_eat / 2);
-	while (phil->data->died == false)
+	while (true)
 	{
 		check_phil_died(phil);
 		take_forks(phil);
@@ -29,7 +29,6 @@ static void	*simulate(void *arg)
 		think(phil);
 		check_phil_died(phil);
 	}
-	return (NULL);
 }
 
 static bool join_threads(t_phil *phil, t_data *data)

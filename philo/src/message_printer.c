@@ -12,7 +12,7 @@
 
 #include "../incl/philo.h"
 
-void	print_error_exit(int error_key)
+void	print_error(int error_key)
 {
 	if (error_key == INVALID_NUMBER_OF_ARGUMENTS)
 		printf("Error: invalid number of arguments.");
@@ -26,22 +26,21 @@ void	print_error_exit(int error_key)
 		printf("Error: invalid time to eat.");
 	else if (error_key == INVALID_NUMBER_TIMES_EAT)
 		printf("Error: invalid number of times to eat.");
-	exit(EXIT_FAILURE);
 }
 
-void	print_status(t_phil *phil, t_id *id, int status)
+void	print_status(t_phil *phil, int status)
 {
-//	pthread_mutex_lock(&phil->std_out);
+//	pthread_mutex_lock(&phil->data->std_out);
 	get_current_time(phil);
 	if (status == PHIL_DIED)
-		printf("%ld %d died\n", phil->tstamp->t_current, id->phil);
+		printf("%ld %d died\n", phil->data->t_current, phil->id);
 	else if (status == LEFT_FORK_TAKEN || status == RIGHT_FORK_TAKEN)
-		printf("%ld %d has taken a fork\n", phil->tstamp->t_current, id->phil);
+		printf("%ld %d has taken a fork\n", phil->data->t_current, phil->id);
 	else if (status == IS_EATING)
-		printf("%ld %d is eating\n", phil->tstamp->t_current, id->phil);
+		printf("%ld %d is eating\n", phil->data->t_current, phil->id);
 	else if (status == IS_SLEEPING)
-		printf("%ld %d is sleeping\n", phil->tstamp->t_current, id->phil);
+		printf("%ld %d is sleeping\n", phil->data->t_current, phil->id);
 	else if (status == IS_THINKING)
-		printf("%ld %d is thinking\n", phil->tstamp->t_current, id->phil);
-//	pthread_mutex_unlock(&phil->std_out);
+		printf("%ld %d is thinking\n", phil->data->t_current, phil->id);
+//	pthread_mutex_unlock(&phil->data->std_out);
 }

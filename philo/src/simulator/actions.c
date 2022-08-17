@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 14:43:23 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/17 15:31:37 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/17 15:33:50 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,14 @@
 void	take_forks(t_phil *phil)
 {
 	pthread_mutex_lock(&phil->data->forks[phil->fork_left]);
-	if (phil->data->died == false)
-		print_status(phil, LEFT_FORK_TAKEN);
+	print_status(phil, LEFT_FORK_TAKEN);
 	pthread_mutex_lock(&phil->data->forks[phil->fork_right]);
-	if (phil->data->died == false)
-		print_status(phil, RIGHT_FORK_TAKEN);
+	print_status(phil, RIGHT_FORK_TAKEN);
 }
 
 void	eat(t_phil *phil)
 {
-	if (phil->data->died == false)
-		print_status(phil, IS_EATING);
+	print_status(phil, IS_EATING);
 	ft_usleep(phil->data->t_eat);
 	pthread_mutex_unlock(&phil->data->forks[phil->fork_right]);
 	pthread_mutex_unlock(&phil->data->forks[phil->fork_left]);
@@ -35,13 +32,11 @@ void	eat(t_phil *phil)
 
 void	ph_sleep(t_phil *phil)
 {
-	if (phil->data->died == false)
-		print_status(phil, IS_SLEEPING);
+	print_status(phil, IS_SLEEPING);
 	ft_usleep(phil->data->t_sleep);
 }
 
 void	think(t_phil *phil)
 {
-	if (phil->data->died == false)
-		print_status(phil, IS_THINKING);
+	print_status(phil, IS_THINKING);
 }

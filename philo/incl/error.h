@@ -22,6 +22,6 @@
 # define INVALID_TIME_TO_SLEEP 			6
 # define INVALID_NUMBER_TIMES_EAT 		7
 
-void	print_error_exit(int error_key);
+void	print_error(int error_key);
 
 #endif

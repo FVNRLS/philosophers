@@ -26,10 +26,10 @@
 # define PHIL_DIED				6
 
 //PHILOSOPHERS ACTIONS
-void	take_forks(t_phil *phil, t_id *id);
-void	eat(t_phil *phil, t_id *id);
-void	ph_sleep(t_phil *phil, t_id *id);
-void	think(t_phil *phil, t_id *id);
-void	print_status(t_phil *phil, t_id *id, int status);
+void	take_forks(t_phil *phil);
+void	eat(t_phil *phil);
+void	ph_sleep(t_phil *phil);
+void	think(t_phil *phil);
+void	print_status(t_phil *phil, int status);
 
 #endif
