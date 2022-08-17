@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 15:39:15 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/17 16:22:44 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/17 16:34:18 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ static void	*simulate(void *arg)
 
 	phil = arg;
 
-//	printf("id: %d, lf: %d, rf: %d\n", id.phil, id.fork_left, id.fork_right);
 	if (phil->id % 2 == 0)
 		ft_usleep(phil->data->t_eat / 2);
 	while (phil->data->died == false)
@@ -62,7 +61,7 @@ static bool	start_threads(t_phil *phil, t_data *data)
 	return (true);
 }
 
-static bool	init_phils(t_phil *phil, t_data *data)
+static void	init_phils(t_phil *phil, t_data *data)
 {
 	int i;
 
@@ -79,21 +78,19 @@ static bool	init_phils(t_phil *phil, t_data *data)
 		phil[i].data->died = false;
 		i++;
 	}
-	return (true);
 }
 
 int	start_simulation(t_data *data)
 {
 	t_phil 		*phil;
 
-	bool	phils_inited;
 	bool	threads_started;
 	bool	threads_joined;
 
 	phil = malloc(sizeof(t_phil) * data->n_phil);
-	phils_inited = init_phils(phil, data);
-	if (phils_inited == false)
+	if (!phil)
 		return (EXIT_FAILURE);
+	init_phils(phil, data);
 	threads_started = start_threads(phil, data);
 	if (threads_started == false)
 	{
