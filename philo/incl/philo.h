@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 13:12:53 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/17 16:12:14 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/17 19:38:36 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ bool	check_number_times_eat(t_data *data);
 
 //SIMULATION FUNCTIONS
 int		start_simulation(t_data *data);
-bool	check_phil_died(t_phil *phil);
+void	watch_phils(t_phil *phil);
 void	get_current_time(t_phil *phil);
 
 //MUTEX (FORKS) CONTROLLER

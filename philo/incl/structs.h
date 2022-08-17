@@ -35,9 +35,7 @@ typedef struct s_data
 	long 			t_eat;
 	long			t_sleep;
 	long			n_eat;
-	long			t_last_eat;
 	long 			t_current;
-	long 			t_diff;
 	bool			died;
 	pthread_mutex_t *forks;
 	pthread_mutex_t std_out;
@@ -51,6 +49,8 @@ typedef struct s_phil
 	int 			id;
 	int 			fork_left;
 	int 			fork_right;
+	long			t_last_eat;
+	long 			t_diff;
 	t_data 			*data;
 }		t_phil;
 

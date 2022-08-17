@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 15:39:15 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/17 16:48:30 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/17 19:49:03 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,16 @@ static void	*simulate(void *arg)
 	t_phil	*phil;
 
 	phil = arg;
-
 	if (phil->id % 2 == 0)
 		ft_usleep(phil->data->t_eat / 2);
-	while (true)
+	while (phil->data->died == false)
 	{
-		check_phil_died(phil);
 		take_forks(phil);
 		eat(phil);
 		ph_sleep(phil);
 		think(phil);
-		check_phil_died(phil);
 	}
+	return (NULL);
 }
 
 static bool join_threads(t_phil *phil, t_data *data)
@@ -74,7 +72,7 @@ static void	init_phils(t_phil *phil, t_data *data)
 			phil[i].fork_right = 1;
 		else
 			phil[i].fork_right = phil[i].id + 1;
-		phil[i].data->died = false;
+		phil->data->died = false;
 		i++;
 	}
 }
@@ -82,7 +80,6 @@ static void	init_phils(t_phil *phil, t_data *data)
 int	start_simulation(t_data *data)
 {
 	t_phil 		*phil;
-
 	bool	threads_started;
 	bool	threads_joined;
 
@@ -97,6 +94,7 @@ int	start_simulation(t_data *data)
 		phil->thread = NULL;
 		return (EXIT_FAILURE);
 	}
+	watch_phils(phil);
 	threads_joined = join_threads(phil, data);
 	if (threads_joined == false)
 		return (EXIT_FAILURE);
