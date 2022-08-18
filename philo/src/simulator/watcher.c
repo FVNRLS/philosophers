@@ -15,14 +15,14 @@
 void	get_current_time(t_phil *phil)
 {
 	gettimeofday(&phil->data->time, NULL);
-	phil->data->t_current =
+	phil->t_current =
 			((phil->data->time.tv_sec * 1000) + (phil->data->time.tv_usec / 1000));
 }
 
 static void	get_time_diff(t_phil *phil, int index)
 {
 	get_current_time(phil);
-	phil[index].t_diff = phil->data->t_current - phil->t_last_eat;
+	phil[index].t_diff = phil->t_current - phil->t_last_eat;
 }
 
 //void	kill_phil(t_phil)

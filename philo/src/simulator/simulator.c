@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 15:39:15 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/17 19:49:03 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/18 11:07:36 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,16 @@ static void	*simulate(void *arg)
 		ft_usleep(phil->data->t_eat / 2);
 	while (phil->data->died == false)
 	{
-		take_forks(phil);
+		pthread_mutex_lock(&phil->data->forks[phil->fork_left]);
+		print_status(phil, LEFT_FORK_TAKEN);
+		pthread_mutex_lock(&phil->data->forks[phil->fork_right]);
+		print_status(phil, RIGHT_FORK_TAKEN);
+//		take_forks(phil);
 		eat(phil);
+		pthread_mutex_unlock(&phil->data->forks[phil->fork_right]);
+		pthread_mutex_unlock(&phil->data->forks[phil->fork_left]);
 		ph_sleep(phil);
-		think(phil);
+		print_status(phil, IS_THINKING);
 	}
 	return (NULL);
 }
@@ -67,11 +73,11 @@ static void	init_phils(t_phil *phil, t_data *data)
 	{
 		phil[i].data = data;
 		phil[i].id = i + 1;
-		phil[i].fork_left = phil[i].id;
+		phil[i].fork_left = phil[i].id - 1;
 		if (phil[i].id == data->n_phil)
-			phil[i].fork_right = 1;
+			phil[i].fork_right = 0;
 		else
-			phil[i].fork_right = phil[i].id + 1;
+			phil[i].fork_right = phil[i].id;
 		phil->data->died = false;
 		i++;
 	}

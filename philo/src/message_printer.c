@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 15:45:18 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/16 17:04:37 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/18 11:08:20 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,17 +30,19 @@ void	print_error(int error_key)
 
 void	print_status(t_phil *phil, int status)
 {
-//	pthread_mutex_lock(&phil->data->std_out);
+	pthread_mutex_lock(&phil->data->std_out);
 	get_current_time(phil);
 	if (status == PHIL_DIED)
-		printf("%ld %d died\n", phil->data->t_current, phil->id);
+		printf("%ld %d died\n", phil->t_current, phil->id);
 	else if (status == LEFT_FORK_TAKEN || status == RIGHT_FORK_TAKEN)
-		printf("%ld %d has taken a fork\n", phil->data->t_current, phil->id);
+		printf("%ld %d has taken a fork\n", phil->t_current, phil->id);
+//	else if(status == RIGHT_FORK_TAKEN)
+//		printf("%ld %d has taken right	fork %d\n", phil->t_current, phil->id, phil->fork_right);
 	else if (status == IS_EATING)
-		printf("%ld %d is eating\n", phil->data->t_current, phil->id);
+		printf("%ld %d is eating\n", phil->t_current, phil->id);
 	else if (status == IS_SLEEPING)
-		printf("%ld %d is sleeping\n", phil->data->t_current, phil->id);
+		printf("%ld %d is sleeping\n", phil->t_current, phil->id);
 	else if (status == IS_THINKING)
-		printf("%ld %d is thinking\n", phil->data->t_current, phil->id);
-//	pthread_mutex_unlock(&phil->data->std_out);
+		printf("%ld %d is thinking\n", phil->t_current, phil->id);
+	pthread_mutex_unlock(&phil->data->std_out);
 }

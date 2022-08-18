@@ -35,7 +35,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -mmacosx-version-min=10.15"
+					"fragment" : "-g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk"
 				},
 				{
 					"fragment" : "-std=gnu99"
