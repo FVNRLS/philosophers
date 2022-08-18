@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 17:18:11 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/18 10:32:12 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/18 16:37:51 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ typedef struct s_data
 	long			t_die;
 	long 			t_eat;
 	long			t_sleep;
-	long			n_eat;
+	long			meals;
+	long 			t_start;
 	bool			died;
 	pthread_mutex_t *forks;
 	pthread_mutex_t std_out;
@@ -46,6 +47,7 @@ typedef struct s_phil
 {
 	pthread_t 		*thread;
 	int 			id;
+	int 			status;
 	int 			fork_left;
 	int 			fork_right;
 	long 			t_current;

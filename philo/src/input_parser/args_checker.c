@@ -64,13 +64,13 @@ bool	check_time_to_sleep(t_data *data)
 //TODO: set relations here
 bool	check_number_times_eat(t_data *data)
 {
-	data->n_eat = ft_atol(data->args->av[5]);
-	if (data->n_eat < 1)
+	data->meals = ft_atol(data->args->av[5]);
+	if (data->meals < 1)
 	{
 		print_error(INVALID_NUMBER_TIMES_EAT);
 		return (false);
 	}
-	if ((data->n_eat * data->t_eat) > data->t_die)
+	if ((data->meals * data->t_eat) > data->t_die)
 	{
 		print_error(INVALID_NUMBER_TIMES_EAT);
 		return (false);

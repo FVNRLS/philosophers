@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 15:39:15 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/18 12:53:41 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/18 18:19:16 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void	*simulate(void *arg)
 		take_forks(phil);
 		eat(phil);
 		ph_sleep(phil);
-		print_status(phil, IS_THINKING);
+		think(phil);
 	}
 	return (NULL);
 }
@@ -74,15 +74,18 @@ static void	init_phils(t_phil *phil, t_data *data)
 			phil[i].fork_right = phil[i].id;
 		phil->data->died = false;
 		phil->t_last_eat = 0;
+		phil->status = FREE;
 		i++;
 	}
+	gettimeofday(&phil->data->time, NULL);
+	phil->data->t_start = ((phil->data->time.tv_sec * 1000) + (phil->data->time.tv_usec / 1000));
 }
 
 int	start_simulation(t_data *data)
 {
 	t_phil 		*phil;
-	bool	threads_started;
-	bool	threads_joined;
+	bool		threads_started;
+	bool		threads_joined;
 
 	phil = malloc(sizeof(t_phil) * data->n_phil);
 	if (!phil)
