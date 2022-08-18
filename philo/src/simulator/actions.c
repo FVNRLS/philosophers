@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 14:43:23 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/18 10:36:18 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/18 10:44:39 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ void	eat(t_phil *phil)
 {
 	print_status(phil, IS_EATING);
 	ft_usleep(phil->data->t_eat);
-//	pthread_mutex_unlock(&phil->data->forks[phil->fork_right]);
-//	pthread_mutex_unlock(&phil->data->forks[phil->fork_left]);
+	pthread_mutex_unlock(&phil->data->forks[phil->fork_right]);
+	pthread_mutex_unlock(&phil->data->forks[phil->fork_left]);
 	get_current_time(phil);
 	phil->t_last_eat = phil->t_current;
 }

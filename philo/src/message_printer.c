@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 15:45:18 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/18 11:08:20 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/18 11:08:44 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,6 @@ void	print_status(t_phil *phil, int status)
 		printf("%ld %d died\n", phil->t_current, phil->id);
 	else if (status == LEFT_FORK_TAKEN || status == RIGHT_FORK_TAKEN)
 		printf("%ld %d has taken a fork\n", phil->t_current, phil->id);
-//	else if(status == RIGHT_FORK_TAKEN)
-//		printf("%ld %d has taken right	fork %d\n", phil->t_current, phil->id, phil->fork_right);
 	else if (status == IS_EATING)
 		printf("%ld %d is eating\n", phil->t_current, phil->id);
 	else if (status == IS_SLEEPING)
