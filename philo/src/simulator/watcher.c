@@ -6,11 +6,22 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 14:47:44 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/18 18:57:48 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/18 19:45:33 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incl/philo.h"
+
+static bool	check_if_lonely(t_phil *phil)
+{
+	if (phil->data->n_phil == 1)
+	{
+		print_status(phil, PHIL_DIED);
+		phil->data->died = true;
+		return (true);
+	}
+	return (false);
+}
 
 void	get_current_time(t_phil *phil)
 {
@@ -35,7 +46,11 @@ void	get_time_diff(t_phil *phil)
 void	watch_phils(t_phil *phil)
 {
 	int 	i;
+	bool 	lonely;
 
+	lonely = check_if_lonely(phil);
+	if (lonely == true)
+		return ;
 	i = 0;
 	while (i < phil->data->n_phil)
 	{

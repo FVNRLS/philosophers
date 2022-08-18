@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 14:43:23 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/18 19:14:16 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/18 19:16:06 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,5 @@ void	think(t_phil *phil)
 	get_time_diff(phil);
 	if (phil->data->died == false)
 		print_status(phil, IS_THINKING);
-//	printf("diff:	%ld\n", phil->t_diff);
 }
 
