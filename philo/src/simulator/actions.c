@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 14:43:23 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/18 19:16:06 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/18 19:52:23 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ void	eat(t_phil *phil)
 		ft_usleep(phil->data->t_eat);
 		pthread_mutex_unlock(&phil->data->forks[phil->fork_right]);
 		pthread_mutex_unlock(&phil->data->forks[phil->fork_left]);
+		phil->meals++;
+//		printf("id:	%d,	meals:	%d\n", phil->id, phil->meals);
 	}
 }
 

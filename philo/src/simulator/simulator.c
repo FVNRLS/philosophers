@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 15:39:15 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/18 19:29:13 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/18 19:35:52 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,7 @@ static void	init_phils(t_phil *phil, t_data *data)
 		phil->data->died = false;
 		phil->t_last_eat = 0;
 		phil->status = FREE;
+		phil->meals = 0;
 		i++;
 	}
 	gettimeofday(&phil->data->time, NULL);
