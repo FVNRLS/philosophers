@@ -6,13 +6,11 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 19:31:10 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/18 18:19:16 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/19 13:29:46 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incl/philo.h"
-
-//TODO: plan dependencies and edge cases: time to die vs eat and sleep and relations between
 
 bool	check_phil_num(t_data *data)
 {
@@ -61,16 +59,10 @@ bool	check_time_to_sleep(t_data *data)
 	return (true);
 }
 
-//TODO: set relations here
 bool	check_number_times_eat(t_data *data)
 {
 	data->min_meals = ft_atol(data->args->av[5]);
 	if (data->min_meals < 1)
-	{
-		print_error(INVALID_NUMBER_TIMES_EAT);
-		return (false);
-	}
-	if ((data->min_meals * data->t_eat) > data->t_die)
 	{
 		print_error(INVALID_NUMBER_TIMES_EAT);
 		return (false);

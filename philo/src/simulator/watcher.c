@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 14:47:44 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/18 19:45:33 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/19 13:58:14 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,33 @@ static bool	check_if_lonely(t_phil *phil)
 {
 	if (phil->data->n_phil == 1)
 	{
+		print_status(phil, FORK_TAKEN);
 		print_status(phil, PHIL_DIED);
+		pthread_mutex_unlock(&phil->data->forks[phil->fork_left]);
 		phil->data->died = true;
 		return (true);
 	}
 	return (false);
+}
+
+static void	check_min_meals(t_phil *phil)
+{
+	int i;
+	int min;
+
+	if (phil->data->min_meals == 0)
+		return ;
+	i = 0;
+	min = phil[0].meals;
+	while (i < phil->data->n_phil)
+	{
+		if (phil[i].meals < min)
+			min = phil[i].meals;
+		i++;
+	}
+	printf("min:	%d\n", min);
+	if (min >= phil->data->min_meals)
+		phil->data->all_sated = true;
 }
 
 void	get_current_time(t_phil *phil)
@@ -34,13 +56,8 @@ void	get_current_time(t_phil *phil)
 
 void	get_time_diff(t_phil *phil)
 {
-	if (phil->t_last_eat == 0)
-		phil->t_diff = 0;
-	else
-	{
-		get_current_time(phil);
-		phil->t_diff = phil->t_current - phil->t_last_eat;
-	}
+	get_current_time(phil);
+	phil->t_diff = phil->t_current - phil->t_last_eat;
 }
 
 void	watch_phils(t_phil *phil)
@@ -54,6 +71,9 @@ void	watch_phils(t_phil *phil)
 	i = 0;
 	while (i < phil->data->n_phil)
 	{
+		check_min_meals(phil);
+		if (phil->data->all_sated == true)
+			return ;
 		if (phil[i].status == FREE)
 			get_time_diff(&phil[i]);
 		if (phil[i].t_diff >= phil->data->t_die)

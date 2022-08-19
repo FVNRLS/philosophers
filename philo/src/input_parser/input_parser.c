@@ -24,6 +24,7 @@ static bool	parse_args(t_data *data)
 	t_to_die_valid = check_time_to_die(data);
 	t_to_eat_valid = check_time_to_eat(data);
 	t_to_sleep_valid = check_time_to_sleep(data);
+	data->min_meals = 0;
 	if (phil_num_valid == false || t_to_die_valid == false ||
 	t_to_eat_valid == false || t_to_sleep_valid == false)
 		return (false);

@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 17:18:11 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/18 18:19:16 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/19 11:08:22 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ typedef struct s_data
 	long			min_meals;
 	long 			t_start;
 	bool			died;
+	bool			all_sated;
 	pthread_mutex_t *forks;
 	pthread_mutex_t std_out;
 	struct timeval	time;

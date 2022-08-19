@@ -36,7 +36,7 @@ void	print_status(t_phil *phil, int status)
 		printf("%ld %d died\n", phil->t_current, phil->id);
 	if (phil->data->died == false)
 	{
-		if (status == LEFT_FORK_TAKEN || status == RIGHT_FORK_TAKEN)
+		if (status == FORK_TAKEN)
 			printf("%ld %d has taken a fork\n", phil->t_current, phil->id);
 		else if (status == IS_EATING)
 			printf("%ld %d is eating\n", phil->t_current, phil->id);

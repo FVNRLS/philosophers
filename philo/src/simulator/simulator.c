@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 15:39:15 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/18 19:35:52 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/19 12:45:16 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,10 @@ static void	*simulate(void *arg)
 	phil = arg;
 	if (phil->id % 2 == 0)
 		ft_usleep(phil->data->t_eat / 2);
-	while (phil->data->died == false)
+	while (phil->data->died == false && phil->data->all_sated == false)
 	{
+//		printf("sated: %d\n", phil->data->all_sated);
+//		printf("min meals: %ld\n", phil->data->min_meals);
 		take_forks(phil);
 		eat(phil);
 		ph_sleep(phil);
@@ -72,12 +74,13 @@ static void	init_phils(t_phil *phil, t_data *data)
 			phil[i].fork_right = 0;
 		else
 			phil[i].fork_right = phil[i].id;
-		phil->data->died = false;
 		phil->t_last_eat = 0;
 		phil->status = FREE;
 		phil->meals = 0;
 		i++;
 	}
+	phil->data->died = false;
+	phil->data->all_sated = false;
 	gettimeofday(&phil->data->time, NULL);
 	phil->data->t_start = ((phil->data->time.tv_sec * 1000) + (phil->data->time.tv_usec / 1000));
 }

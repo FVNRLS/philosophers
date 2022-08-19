@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 17:15:15 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/18 17:46:48 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/19 11:07:30 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@
 # include "structs.h"
 
 //STATES
-# define LEFT_FORK_TAKEN		1
-# define RIGHT_FORK_TAKEN		2
-# define IS_EATING				3
-# define IS_SLEEPING			4
-# define IS_THINKING			5
-# define PHIL_DIED				6
-# define BUSY					7
-# define FREE					8
+# define FORK_TAKEN		1
+# define IS_EATING		2
+# define IS_SLEEPING	3
+# define IS_THINKING	4
+# define PHIL_DIED		5
+# define BUSY			6
+# define FREE			7
+
 
 //PHILOSOPHERS ACTIONS
 void	take_forks(t_phil *phil);
