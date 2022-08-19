@@ -23,4 +23,5 @@ add_executable(philosophers ./philo/src/main.c
         ./philo/tools/ft_check_invalid_chars.c
         ./philo/tools/ft_is_digit.c
         ./philo/tools/ft_usleep.c
+        ./philo/tools/ft_free_phils.c
 )

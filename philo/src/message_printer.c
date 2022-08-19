@@ -24,6 +24,8 @@ void	print_error(int error_key)
 		printf("Error: invalid time to die.");
 	else if (error_key == INVALID_TIME_TO_EAT)
 		printf("Error: invalid time to eat.");
+	else if (error_key == INVALID_TIME_TO_SLEEP)
+		printf("Error: invalid time to sleep.");
 	else if (error_key == INVALID_NUMBER_TIMES_EAT)
 		printf("Error: invalid number of times to eat.");
 }

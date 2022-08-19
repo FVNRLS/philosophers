@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 14:47:44 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/19 13:58:14 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/19 16:16:00 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ static void	check_min_meals(t_phil *phil)
 			min = phil[i].meals;
 		i++;
 	}
-	printf("min:	%d\n", min);
 	if (min >= phil->data->min_meals)
 		phil->data->all_sated = true;
 }
@@ -75,13 +74,15 @@ void	watch_phils(t_phil *phil)
 		if (phil->data->all_sated == true)
 			return ;
 		if (phil[i].status == FREE)
-			get_time_diff(&phil[i]);
-		if (phil[i].t_diff >= phil->data->t_die)
 		{
-			phil->data->died = true;
-			print_status(&phil[i], PHIL_DIED);
-			printf("diff phil %d:	%ld		last eat:	%ld\n", phil[i].id, phil[i].t_diff, phil[i].t_last_eat);
-			return ;
+			get_time_diff(&phil[i]);
+			if (phil[i].t_diff >= phil->data->t_die)
+			{
+				phil->data->died = true;
+				print_status(&phil[i], PHIL_DIED);
+				printf("diff phil %d:	%ld		last eat:	%ld\n", phil[i].id, phil[i].t_diff, phil[i].t_last_eat);
+				return ;
+			}
 		}
 		i++;
 		if (i == phil->data->n_phil)

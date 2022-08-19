@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 14:43:23 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/19 13:55:26 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/19 16:10:06 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	take_forks(t_phil *phil)
 {
+	phil->status = FREE;
 	if (phil->data->died == false && phil->data->all_sated == false)
 	{
 		pthread_mutex_lock(&phil->data->forks[phil->fork_left]);
@@ -32,24 +33,21 @@ void	eat(t_phil *phil)
 	phil->t_last_eat = phil->t_current;
 	if (phil->data->died == false && phil->data->all_sated == false)
 	{
-		phil->status = BUSY;
+		phil->status = IS_EATING;
 		print_status(phil, IS_EATING);
-		ft_usleep(phil->data->t_eat);
+		ft_usleep(phil, phil->data->t_eat);
 		pthread_mutex_unlock(&phil->data->forks[phil->fork_right]);
 		pthread_mutex_unlock(&phil->data->forks[phil->fork_left]);
-		phil->meals++;
-		printf("id:	%d,	meals:	%d\n", phil->id, phil->meals);
 	}
 }
 
 void	ph_sleep(t_phil *phil)
 {
+	phil->meals++;
+	phil->status = FREE;
+	print_status(phil, IS_SLEEPING);
 	if (phil->data->died == false && phil->data->all_sated == false)
-	{
-		phil->status = BUSY;
-		print_status(phil, IS_SLEEPING);
-		ft_usleep(phil->data->t_sleep);
-	}
+		ft_usleep(phil, phil->data->t_sleep);
 }
 
 void	think(t_phil *phil)

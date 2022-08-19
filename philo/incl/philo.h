@@ -28,7 +28,7 @@ bool	check_time_to_sleep(t_data *data);
 bool	check_number_times_eat(t_data *data);
 
 //SIMULATION FUNCTIONS
-int		start_simulation(t_data *data);
+int		run_simulation(t_data *data);
 void	watch_phils(t_phil *phil);
 void	get_time_diff(t_phil *phil);
 void	get_current_time(t_phil *phil);

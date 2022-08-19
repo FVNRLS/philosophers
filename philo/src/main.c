@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 13:11:48 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/17 16:24:24 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/19 16:06:37 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void check_leaks()
 	exit_ret = init_mutexes(&data);
 	if (exit_ret == EXIT_FAILURE)
 		return (EXIT_FAILURE);
-	exit_ret = start_simulation(&data);
+	exit_ret = run_simulation(&data);
 	destroy_mutexes(&data);
 	if (exit_ret == EXIT_FAILURE)
 		return (EXIT_FAILURE);
