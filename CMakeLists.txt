@@ -8,21 +8,21 @@ add_executable(
         philosophers philo_bonus/main_bonus.c
 
         #INPUT PARSER
-        ./philo_bonus/src/input_parser/input_parser.c
-        ./philo_bonus/src/input_parser/args_checker.c
+        philo_bonus/src/input_parser/input_parser_bonus.c
+        philo_bonus/src/input_parser/args_checker_bonus.c
         #SIMULATOR
-        ./philo_bonus/src/simulator/actions.c
-        ./philo_bonus/src/simulator/simulator.c
-        ./philo_bonus/src/simulator/watcher.c
-        ./philo_bonus/src/simulator/mutex_controller.c
+        philo_bonus/src/simulator/actions_bonus.c
+        philo_bonus/src/simulator/simulator_bonus.c
+        philo_bonus/src/simulator/watcher_bonus.c
+        philo_bonus/src/simulator/mutex_controller_bonus.c
         #ERROR MANAGER
-        ./philo_bonus/src/message_printer.c
+        philo_bonus/src/message_printer_bonus.c
         #TOOLS
-        ./philo_bonus/tools/ft_atol.c
-        ./philo_bonus/tools/ft_check_invalid_chars.c
-        ./philo_bonus/tools/ft_is_digit.c
-        ./philo_bonus/tools/ft_usleep.c
-        ./philo_bonus/tools/ft_free_phils.c
+        philo_bonus/tools/ft_atol_bonus.c
+        philo_bonus/tools/ft_check_invalid_chars_bonus.c
+        philo_bonus/tools/ft_is_digit_bonus.c
+        philo_bonus/tools/ft_usleep_bonus.c
+        philo_bonus/tools/ft_free_phils_bonus.c
 
 
 
