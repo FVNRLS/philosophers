@@ -6,11 +6,11 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 13:11:48 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/19 16:06:37 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/19 16:11:06 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incl/philo.h"
+#include "incl/philo.h"
 
 void check_leaks()
 {

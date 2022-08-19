@@ -49,83 +49,83 @@ cmake_ninja_workdir = /Users/rmazurit/Documents/42_Projects/philosophers/cmake-b
 
 build cmake_object_order_depends_target_philosophers: phony || CMakeFiles/philosophers.dir
 
-build CMakeFiles/philosophers.dir/philo/src/main.c.o: C_COMPILER__philosophers_Debug /Users/rmazurit/Documents/42_Projects/philosophers/philo/src/main.c || cmake_object_order_depends_target_philosophers
-  DEP_FILE = CMakeFiles/philosophers.dir/philo/src/main.c.o.d
+build CMakeFiles/philosophers.dir/philo_bonus/main_bonus.c.o: C_COMPILER__philosophers_Debug /Users/rmazurit/Documents/42_Projects/philosophers/philo_bonus/main_bonus.c || cmake_object_order_depends_target_philosophers
+  DEP_FILE = CMakeFiles/philosophers.dir/philo_bonus/main_bonus.c.o.d
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -std=gnu99
   OBJECT_DIR = CMakeFiles/philosophers.dir
-  OBJECT_FILE_DIR = CMakeFiles/philosophers.dir/philo/src
+  OBJECT_FILE_DIR = CMakeFiles/philosophers.dir/philo_bonus
 
-build CMakeFiles/philosophers.dir/philo/src/input_parser/input_parser.c.o: C_COMPILER__philosophers_Debug /Users/rmazurit/Documents/42_Projects/philosophers/philo/src/input_parser/input_parser.c || cmake_object_order_depends_target_philosophers
-  DEP_FILE = CMakeFiles/philosophers.dir/philo/src/input_parser/input_parser.c.o.d
+build CMakeFiles/philosophers.dir/philo_bonus/src/input_parser/input_parser.c.o: C_COMPILER__philosophers_Debug /Users/rmazurit/Documents/42_Projects/philosophers/philo_bonus/src/input_parser/input_parser.c || cmake_object_order_depends_target_philosophers
+  DEP_FILE = CMakeFiles/philosophers.dir/philo_bonus/src/input_parser/input_parser.c.o.d
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -std=gnu99
   OBJECT_DIR = CMakeFiles/philosophers.dir
-  OBJECT_FILE_DIR = CMakeFiles/philosophers.dir/philo/src/input_parser
+  OBJECT_FILE_DIR = CMakeFiles/philosophers.dir/philo_bonus/src/input_parser
 
-build CMakeFiles/philosophers.dir/philo/src/input_parser/args_checker.c.o: C_COMPILER__philosophers_Debug /Users/rmazurit/Documents/42_Projects/philosophers/philo/src/input_parser/args_checker.c || cmake_object_order_depends_target_philosophers
-  DEP_FILE = CMakeFiles/philosophers.dir/philo/src/input_parser/args_checker.c.o.d
+build CMakeFiles/philosophers.dir/philo_bonus/src/input_parser/args_checker.c.o: C_COMPILER__philosophers_Debug /Users/rmazurit/Documents/42_Projects/philosophers/philo_bonus/src/input_parser/args_checker.c || cmake_object_order_depends_target_philosophers
+  DEP_FILE = CMakeFiles/philosophers.dir/philo_bonus/src/input_parser/args_checker.c.o.d
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -std=gnu99
   OBJECT_DIR = CMakeFiles/philosophers.dir
-  OBJECT_FILE_DIR = CMakeFiles/philosophers.dir/philo/src/input_parser
+  OBJECT_FILE_DIR = CMakeFiles/philosophers.dir/philo_bonus/src/input_parser
 
-build CMakeFiles/philosophers.dir/philo/src/simulator/actions.c.o: C_COMPILER__philosophers_Debug /Users/rmazurit/Documents/42_Projects/philosophers/philo/src/simulator/actions.c || cmake_object_order_depends_target_philosophers
-  DEP_FILE = CMakeFiles/philosophers.dir/philo/src/simulator/actions.c.o.d
+build CMakeFiles/philosophers.dir/philo_bonus/src/simulator/actions.c.o: C_COMPILER__philosophers_Debug /Users/rmazurit/Documents/42_Projects/philosophers/philo_bonus/src/simulator/actions.c || cmake_object_order_depends_target_philosophers
+  DEP_FILE = CMakeFiles/philosophers.dir/philo_bonus/src/simulator/actions.c.o.d
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -std=gnu99
   OBJECT_DIR = CMakeFiles/philosophers.dir
-  OBJECT_FILE_DIR = CMakeFiles/philosophers.dir/philo/src/simulator
+  OBJECT_FILE_DIR = CMakeFiles/philosophers.dir/philo_bonus/src/simulator
 
-build CMakeFiles/philosophers.dir/philo/src/simulator/simulator.c.o: C_COMPILER__philosophers_Debug /Users/rmazurit/Documents/42_Projects/philosophers/philo/src/simulator/simulator.c || cmake_object_order_depends_target_philosophers
-  DEP_FILE = CMakeFiles/philosophers.dir/philo/src/simulator/simulator.c.o.d
+build CMakeFiles/philosophers.dir/philo_bonus/src/simulator/simulator.c.o: C_COMPILER__philosophers_Debug /Users/rmazurit/Documents/42_Projects/philosophers/philo_bonus/src/simulator/simulator.c || cmake_object_order_depends_target_philosophers
+  DEP_FILE = CMakeFiles/philosophers.dir/philo_bonus/src/simulator/simulator.c.o.d
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -std=gnu99
   OBJECT_DIR = CMakeFiles/philosophers.dir
-  OBJECT_FILE_DIR = CMakeFiles/philosophers.dir/philo/src/simulator
+  OBJECT_FILE_DIR = CMakeFiles/philosophers.dir/philo_bonus/src/simulator
 
-build CMakeFiles/philosophers.dir/philo/src/simulator/watcher.c.o: C_COMPILER__philosophers_Debug /Users/rmazurit/Documents/42_Projects/philosophers/philo/src/simulator/watcher.c || cmake_object_order_depends_target_philosophers
-  DEP_FILE = CMakeFiles/philosophers.dir/philo/src/simulator/watcher.c.o.d
+build CMakeFiles/philosophers.dir/philo_bonus/src/simulator/watcher.c.o: C_COMPILER__philosophers_Debug /Users/rmazurit/Documents/42_Projects/philosophers/philo_bonus/src/simulator/watcher.c || cmake_object_order_depends_target_philosophers
+  DEP_FILE = CMakeFiles/philosophers.dir/philo_bonus/src/simulator/watcher.c.o.d
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -std=gnu99
   OBJECT_DIR = CMakeFiles/philosophers.dir
-  OBJECT_FILE_DIR = CMakeFiles/philosophers.dir/philo/src/simulator
+  OBJECT_FILE_DIR = CMakeFiles/philosophers.dir/philo_bonus/src/simulator
 
-build CMakeFiles/philosophers.dir/philo/src/simulator/mutex_controller.c.o: C_COMPILER__philosophers_Debug /Users/rmazurit/Documents/42_Projects/philosophers/philo/src/simulator/mutex_controller.c || cmake_object_order_depends_target_philosophers
-  DEP_FILE = CMakeFiles/philosophers.dir/philo/src/simulator/mutex_controller.c.o.d
+build CMakeFiles/philosophers.dir/philo_bonus/src/simulator/mutex_controller.c.o: C_COMPILER__philosophers_Debug /Users/rmazurit/Documents/42_Projects/philosophers/philo_bonus/src/simulator/mutex_controller.c || cmake_object_order_depends_target_philosophers
+  DEP_FILE = CMakeFiles/philosophers.dir/philo_bonus/src/simulator/mutex_controller.c.o.d
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -std=gnu99
   OBJECT_DIR = CMakeFiles/philosophers.dir
-  OBJECT_FILE_DIR = CMakeFiles/philosophers.dir/philo/src/simulator
+  OBJECT_FILE_DIR = CMakeFiles/philosophers.dir/philo_bonus/src/simulator
 
-build CMakeFiles/philosophers.dir/philo/src/message_printer.c.o: C_COMPILER__philosophers_Debug /Users/rmazurit/Documents/42_Projects/philosophers/philo/src/message_printer.c || cmake_object_order_depends_target_philosophers
-  DEP_FILE = CMakeFiles/philosophers.dir/philo/src/message_printer.c.o.d
+build CMakeFiles/philosophers.dir/philo_bonus/src/message_printer.c.o: C_COMPILER__philosophers_Debug /Users/rmazurit/Documents/42_Projects/philosophers/philo_bonus/src/message_printer.c || cmake_object_order_depends_target_philosophers
+  DEP_FILE = CMakeFiles/philosophers.dir/philo_bonus/src/message_printer.c.o.d
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -std=gnu99
   OBJECT_DIR = CMakeFiles/philosophers.dir
-  OBJECT_FILE_DIR = CMakeFiles/philosophers.dir/philo/src
+  OBJECT_FILE_DIR = CMakeFiles/philosophers.dir/philo_bonus/src
 
-build CMakeFiles/philosophers.dir/philo/tools/ft_atol.c.o: C_COMPILER__philosophers_Debug /Users/rmazurit/Documents/42_Projects/philosophers/philo/tools/ft_atol.c || cmake_object_order_depends_target_philosophers
-  DEP_FILE = CMakeFiles/philosophers.dir/philo/tools/ft_atol.c.o.d
+build CMakeFiles/philosophers.dir/philo_bonus/tools/ft_atol.c.o: C_COMPILER__philosophers_Debug /Users/rmazurit/Documents/42_Projects/philosophers/philo_bonus/tools/ft_atol.c || cmake_object_order_depends_target_philosophers
+  DEP_FILE = CMakeFiles/philosophers.dir/philo_bonus/tools/ft_atol.c.o.d
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -std=gnu99
   OBJECT_DIR = CMakeFiles/philosophers.dir
-  OBJECT_FILE_DIR = CMakeFiles/philosophers.dir/philo/tools
+  OBJECT_FILE_DIR = CMakeFiles/philosophers.dir/philo_bonus/tools
 
-build CMakeFiles/philosophers.dir/philo/tools/ft_check_invalid_chars.c.o: C_COMPILER__philosophers_Debug /Users/rmazurit/Documents/42_Projects/philosophers/philo/tools/ft_check_invalid_chars.c || cmake_object_order_depends_target_philosophers
-  DEP_FILE = CMakeFiles/philosophers.dir/philo/tools/ft_check_invalid_chars.c.o.d
+build CMakeFiles/philosophers.dir/philo_bonus/tools/ft_check_invalid_chars.c.o: C_COMPILER__philosophers_Debug /Users/rmazurit/Documents/42_Projects/philosophers/philo_bonus/tools/ft_check_invalid_chars.c || cmake_object_order_depends_target_philosophers
+  DEP_FILE = CMakeFiles/philosophers.dir/philo_bonus/tools/ft_check_invalid_chars.c.o.d
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -std=gnu99
   OBJECT_DIR = CMakeFiles/philosophers.dir
-  OBJECT_FILE_DIR = CMakeFiles/philosophers.dir/philo/tools
+  OBJECT_FILE_DIR = CMakeFiles/philosophers.dir/philo_bonus/tools
 
-build CMakeFiles/philosophers.dir/philo/tools/ft_is_digit.c.o: C_COMPILER__philosophers_Debug /Users/rmazurit/Documents/42_Projects/philosophers/philo/tools/ft_is_digit.c || cmake_object_order_depends_target_philosophers
-  DEP_FILE = CMakeFiles/philosophers.dir/philo/tools/ft_is_digit.c.o.d
+build CMakeFiles/philosophers.dir/philo_bonus/tools/ft_is_digit.c.o: C_COMPILER__philosophers_Debug /Users/rmazurit/Documents/42_Projects/philosophers/philo_bonus/tools/ft_is_digit.c || cmake_object_order_depends_target_philosophers
+  DEP_FILE = CMakeFiles/philosophers.dir/philo_bonus/tools/ft_is_digit.c.o.d
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -std=gnu99
   OBJECT_DIR = CMakeFiles/philosophers.dir
-  OBJECT_FILE_DIR = CMakeFiles/philosophers.dir/philo/tools
+  OBJECT_FILE_DIR = CMakeFiles/philosophers.dir/philo_bonus/tools
 
-build CMakeFiles/philosophers.dir/philo/tools/ft_usleep.c.o: C_COMPILER__philosophers_Debug /Users/rmazurit/Documents/42_Projects/philosophers/philo/tools/ft_usleep.c || cmake_object_order_depends_target_philosophers
-  DEP_FILE = CMakeFiles/philosophers.dir/philo/tools/ft_usleep.c.o.d
+build CMakeFiles/philosophers.dir/philo_bonus/tools/ft_usleep.c.o: C_COMPILER__philosophers_Debug /Users/rmazurit/Documents/42_Projects/philosophers/philo_bonus/tools/ft_usleep.c || cmake_object_order_depends_target_philosophers
+  DEP_FILE = CMakeFiles/philosophers.dir/philo_bonus/tools/ft_usleep.c.o.d
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -std=gnu99
   OBJECT_DIR = CMakeFiles/philosophers.dir
-  OBJECT_FILE_DIR = CMakeFiles/philosophers.dir/philo/tools
+  OBJECT_FILE_DIR = CMakeFiles/philosophers.dir/philo_bonus/tools
 
-build CMakeFiles/philosophers.dir/philo/tools/ft_free_phils.c.o: C_COMPILER__philosophers_Debug /Users/rmazurit/Documents/42_Projects/philosophers/philo/tools/ft_free_phils.c || cmake_object_order_depends_target_philosophers
-  DEP_FILE = CMakeFiles/philosophers.dir/philo/tools/ft_free_phils.c.o.d
+build CMakeFiles/philosophers.dir/philo_bonus/tools/ft_free_phils.c.o: C_COMPILER__philosophers_Debug /Users/rmazurit/Documents/42_Projects/philosophers/philo_bonus/tools/ft_free_phils.c || cmake_object_order_depends_target_philosophers
+  DEP_FILE = CMakeFiles/philosophers.dir/philo_bonus/tools/ft_free_phils.c.o.d
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -std=gnu99
   OBJECT_DIR = CMakeFiles/philosophers.dir
-  OBJECT_FILE_DIR = CMakeFiles/philosophers.dir/philo/tools
+  OBJECT_FILE_DIR = CMakeFiles/philosophers.dir/philo_bonus/tools
 
 
 # =============================================================================
@@ -135,7 +135,7 @@ build CMakeFiles/philosophers.dir/philo/tools/ft_free_phils.c.o: C_COMPILER__phi
 #############################################
 # Link the executable philosophers
 
-build philosophers: C_EXECUTABLE_LINKER__philosophers_Debug CMakeFiles/philosophers.dir/philo/src/main.c.o CMakeFiles/philosophers.dir/philo/src/input_parser/input_parser.c.o CMakeFiles/philosophers.dir/philo/src/input_parser/args_checker.c.o CMakeFiles/philosophers.dir/philo/src/simulator/actions.c.o CMakeFiles/philosophers.dir/philo/src/simulator/simulator.c.o CMakeFiles/philosophers.dir/philo/src/simulator/watcher.c.o CMakeFiles/philosophers.dir/philo/src/simulator/mutex_controller.c.o CMakeFiles/philosophers.dir/philo/src/message_printer.c.o CMakeFiles/philosophers.dir/philo/tools/ft_atol.c.o CMakeFiles/philosophers.dir/philo/tools/ft_check_invalid_chars.c.o CMakeFiles/philosophers.dir/philo/tools/ft_is_digit.c.o CMakeFiles/philosophers.dir/philo/tools/ft_usleep.c.o CMakeFiles/philosophers.dir/philo/tools/ft_free_phils.c.o
+build philosophers: C_EXECUTABLE_LINKER__philosophers_Debug CMakeFiles/philosophers.dir/philo_bonus/main_bonus.c.o CMakeFiles/philosophers.dir/philo_bonus/src/input_parser/input_parser.c.o CMakeFiles/philosophers.dir/philo_bonus/src/input_parser/args_checker.c.o CMakeFiles/philosophers.dir/philo_bonus/src/simulator/actions.c.o CMakeFiles/philosophers.dir/philo_bonus/src/simulator/simulator.c.o CMakeFiles/philosophers.dir/philo_bonus/src/simulator/watcher.c.o CMakeFiles/philosophers.dir/philo_bonus/src/simulator/mutex_controller.c.o CMakeFiles/philosophers.dir/philo_bonus/src/message_printer.c.o CMakeFiles/philosophers.dir/philo_bonus/tools/ft_atol.c.o CMakeFiles/philosophers.dir/philo_bonus/tools/ft_check_invalid_chars.c.o CMakeFiles/philosophers.dir/philo_bonus/tools/ft_is_digit.c.o CMakeFiles/philosophers.dir/philo_bonus/tools/ft_usleep.c.o CMakeFiles/philosophers.dir/philo_bonus/tools/ft_free_phils.c.o
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk
   OBJECT_DIR = CMakeFiles/philosophers.dir
   POST_BUILD = :
