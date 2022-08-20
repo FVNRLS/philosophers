@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   message_printer.c                                  :+:      :+:    :+:   */
+/*   message_printer_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 15:45:18 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/18 16:50:06 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/20 18:01:39 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,10 @@ void	print_status(t_phil *phil, int status)
 	sem_wait(phil->data->std_out);
 	get_current_time(phil);
 	if (status == PHIL_DIED)
-		printf("%ld %d died\n", phil->t_current, phil->id);
+	{
+		printf("%ld %d died", phil->t_current, phil->id);
+		exit(PHIL_DIED);
+	}
 	if (phil->died == false)
 	{
 		if (status == FORK_TAKEN)

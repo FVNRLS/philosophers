@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 17:18:11 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/20 13:50:12 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/20 15:56:47 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ typedef struct s_data
 	long 				t_eat;
 	long				t_sleep;
 	long				min_meals;
-	sem_t 				*forks;
+	sem_t 				*fork;
 	sem_t 				*std_out;
 	t_args				*args;
 }		t_data;
