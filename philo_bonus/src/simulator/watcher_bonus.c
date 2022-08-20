@@ -50,7 +50,7 @@ void	get_current_time(t_phil *phil)
 
 	gettimeofday(&current, NULL);
 	phil->t_current =
-			((current.tv_sec * 1000) + (current.tv_usec / 1000)) - phil->data->t_start;
+			((current.tv_sec * 1000) + (current.tv_usec / 1000)) - phil->t_start;
 }
 
 void	get_time_diff(t_phil *phil)
