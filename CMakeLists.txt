@@ -22,11 +22,6 @@ add_executable(
         philo_bonus/tools/ft_check_invalid_chars_bonus.c
         philo_bonus/tools/ft_is_digit_bonus.c
         philo_bonus/tools/ft_usleep_bonus.c
-        philo_bonus/tools/ft_free_phils_bonus.c
-
-
-
-
 
 
 #       ******** MANDATORY PART ********

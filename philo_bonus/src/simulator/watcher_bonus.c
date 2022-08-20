@@ -1,48 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   watcher.c                                          :+:      :+:    :+:   */
+/*   watcher_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 14:47:44 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/19 16:16:00 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/20 15:49:22 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incl/philo_bonus.h"
-
-static bool	check_if_lonely(t_phil *phil)
-{
-	if (phil->data->n_phil == 1)
-	{
-		print_status(phil, FORK_TAKEN);
-		print_status(phil, PHIL_DIED);
-		pthread_mutex_unlock(&phil->data->forks[phil->fork_left]);
-		phil->data->died = true;
-		return (true);
-	}
-	return (false);
-}
-
-static void	check_min_meals(t_phil *phil)
-{
-	int i;
-	int min;
-
-	if (phil->data->min_meals == 0)
-		return ;
-	i = 0;
-	min = phil[0].meals;
-	while (i < phil->data->n_phil)
-	{
-		if (phil[i].meals < min)
-			min = phil[i].meals;
-		i++;
-	}
-	if (min >= phil->data->min_meals)
-		phil->data->all_sated = true;
-}
 
 void	get_current_time(t_phil *phil)
 {
@@ -53,39 +21,49 @@ void	get_current_time(t_phil *phil)
 			((current.tv_sec * 1000) + (current.tv_usec / 1000)) - phil->t_start;
 }
 
-void	get_time_diff(t_phil *phil)
+static void	get_time_diff(t_phil *phil)
 {
 	get_current_time(phil);
 	phil->t_diff = phil->t_current - phil->t_last_eat;
 }
 
+void	check_death(t_phil *phil)
+{
+	get_time_diff(phil);
+	if (phil->t_diff >= phil->data->t_die)
+	{
+		print_status(phil, PHIL_DIED);
+		exit(PHIL_DIED);
+	}
+
+}
+
+static void check_if_lonely(t_phil *phil)
+{
+	if (phil->data->n_phil == 1)
+	{
+		print_status(phil, FORK_TAKEN);
+		print_status(phil, PHIL_DIED);
+		kill(0, SIGINT);
+	}
+}
+
 void	watch_phils(t_phil *phil)
 {
+	int		status;
 	int 	i;
-	bool 	lonely;
-
-	lonely = check_if_lonely(phil);
-	if (lonely == true)
-		return ;
+	
+	check_if_lonely(phil);
 	i = 0;
 	while (i < phil->data->n_phil)
 	{
-		check_min_meals(phil);
-		if (phil->data->all_sated == true)
-			return ;
-		if (phil[i].status == FREE)
+		waitpid(-1, &status, 0);
+		if (status == PHIL_SATED)
+			i++;
+		else if (status == PHIL_DIED || status == -1)
 		{
-			get_time_diff(&phil[i]);
-			if (phil[i].t_diff >= phil->data->t_die)
-			{
-				phil->data->died = true;
-				print_status(&phil[i], PHIL_DIED);
-				printf("diff phil %d:	%ld		last eat:	%ld\n", phil[i].id, phil[i].t_diff, phil[i].t_last_eat);
-				return ;
-			}
+			kill(0, SIGINT);
+			break ;
 		}
-		i++;
-		if (i == phil->data->n_phil)
-			i = 0;
 	}
 }

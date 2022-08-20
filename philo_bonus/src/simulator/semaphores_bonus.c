@@ -36,7 +36,7 @@ void	destroy_semaphores(t_data *data)
 	destroy_sem_forks(data);
 }
 
-int	init_semaphores(t_data *data)
+void	init_semaphores(t_data *data)
 {
 	data->std_out = sem_open("/tmp/.std_out", O_CREAT, RIGHTS, 1);
 	if (!data->std_out)

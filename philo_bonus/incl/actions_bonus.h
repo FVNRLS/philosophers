@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   actions.h                                          :+:      :+:    :+:   */
+/*   actions_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 17:15:15 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/19 11:43:46 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/20 14:15:18 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,13 @@
 # include "structs_bonus.h"
 
 //STATES
-# define FORK_TAKEN		1
-# define IS_EATING		2
-# define IS_SLEEPING	3
-# define IS_THINKING	4
-# define PHIL_DIED		5
-# define FREE			6
+# define FORK_TAKEN				1
+# define IS_EATING				2
+# define IS_SLEEPING			3
+# define IS_THINKING			4
+# define PHIL_SATED				5
+# define PHIL_DIED				6
+
 
 
 //PHILOSOPHERS ACTIONS

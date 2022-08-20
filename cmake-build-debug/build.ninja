@@ -121,12 +121,6 @@ build CMakeFiles/philosophers.dir/philo_bonus/tools/ft_usleep_bonus.c.o: C_COMPI
   OBJECT_DIR = CMakeFiles/philosophers.dir
   OBJECT_FILE_DIR = CMakeFiles/philosophers.dir/philo_bonus/tools
 
-build CMakeFiles/philosophers.dir/philo_bonus/tools/ft_free_phils_bonus.c.o: C_COMPILER__philosophers_Debug /Users/rmazurit/Documents/42_Projects/philosophers/philo_bonus/tools/ft_free_phils_bonus.c || cmake_object_order_depends_target_philosophers
-  DEP_FILE = CMakeFiles/philosophers.dir/philo_bonus/tools/ft_free_phils_bonus.c.o.d
-  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -std=gnu99
-  OBJECT_DIR = CMakeFiles/philosophers.dir
-  OBJECT_FILE_DIR = CMakeFiles/philosophers.dir/philo_bonus/tools
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target philosophers
@@ -135,7 +129,7 @@ build CMakeFiles/philosophers.dir/philo_bonus/tools/ft_free_phils_bonus.c.o: C_C
 #############################################
 # Link the executable philosophers
 
-build philosophers: C_EXECUTABLE_LINKER__philosophers_Debug CMakeFiles/philosophers.dir/philo_bonus/main_bonus.c.o CMakeFiles/philosophers.dir/philo_bonus/src/input_parser/input_parser_bonus.c.o CMakeFiles/philosophers.dir/philo_bonus/src/input_parser/args_checker_bonus.c.o CMakeFiles/philosophers.dir/philo_bonus/src/simulator/actions_bonus.c.o CMakeFiles/philosophers.dir/philo_bonus/src/simulator/simulator_bonus.c.o CMakeFiles/philosophers.dir/philo_bonus/src/simulator/watcher_bonus.c.o CMakeFiles/philosophers.dir/philo_bonus/src/simulator/semaphores_bonus.c.o CMakeFiles/philosophers.dir/philo_bonus/src/message_printer_bonus.c.o CMakeFiles/philosophers.dir/philo_bonus/tools/ft_atol_bonus.c.o CMakeFiles/philosophers.dir/philo_bonus/tools/ft_check_invalid_chars_bonus.c.o CMakeFiles/philosophers.dir/philo_bonus/tools/ft_is_digit_bonus.c.o CMakeFiles/philosophers.dir/philo_bonus/tools/ft_usleep_bonus.c.o CMakeFiles/philosophers.dir/philo_bonus/tools/ft_free_phils_bonus.c.o
+build philosophers: C_EXECUTABLE_LINKER__philosophers_Debug CMakeFiles/philosophers.dir/philo_bonus/main_bonus.c.o CMakeFiles/philosophers.dir/philo_bonus/src/input_parser/input_parser_bonus.c.o CMakeFiles/philosophers.dir/philo_bonus/src/input_parser/args_checker_bonus.c.o CMakeFiles/philosophers.dir/philo_bonus/src/simulator/actions_bonus.c.o CMakeFiles/philosophers.dir/philo_bonus/src/simulator/simulator_bonus.c.o CMakeFiles/philosophers.dir/philo_bonus/src/simulator/watcher_bonus.c.o CMakeFiles/philosophers.dir/philo_bonus/src/simulator/semaphores_bonus.c.o CMakeFiles/philosophers.dir/philo_bonus/src/message_printer_bonus.c.o CMakeFiles/philosophers.dir/philo_bonus/tools/ft_atol_bonus.c.o CMakeFiles/philosophers.dir/philo_bonus/tools/ft_check_invalid_chars_bonus.c.o CMakeFiles/philosophers.dir/philo_bonus/tools/ft_is_digit_bonus.c.o CMakeFiles/philosophers.dir/philo_bonus/tools/ft_usleep_bonus.c.o
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk
   OBJECT_DIR = CMakeFiles/philosophers.dir
   POST_BUILD = :

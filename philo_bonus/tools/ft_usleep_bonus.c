@@ -21,8 +21,10 @@ void   ft_usleep(t_phil *phil, long ms)
 	gettimeofday(&start, NULL);
 	gettimeofday(&now, NULL);
 	i = 0;
-	while(i < ms && phil->data->died == false)
+	while(i < ms && phil->died == false)
 	{
+		if (phil->status == IS_SLEEPING)
+			check_death(phil);
 		gettimeofday(&now, NULL);
 		i = ((now.tv_sec - start.tv_sec) * 1000) + ((now.tv_usec - start.tv_usec) / 1000);
 		usleep(333);

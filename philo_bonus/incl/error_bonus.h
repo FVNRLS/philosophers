@@ -21,6 +21,7 @@
 # define INVALID_TIME_TO_EAT 			5
 # define INVALID_TIME_TO_SLEEP 			6
 # define INVALID_NUMBER_TIMES_EAT 		7
+# define FORK_ERROR						8
 
 void	print_error(int error_key);
 

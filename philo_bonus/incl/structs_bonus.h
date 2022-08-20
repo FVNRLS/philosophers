@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 17:18:11 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/20 12:52:20 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/20 13:50:12 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,6 @@ typedef struct s_data
 	long 				t_eat;
 	long				t_sleep;
 	long				min_meals;
-	bool				died;
-	bool 				all_sated;
 	sem_t 				*forks;
 	sem_t 				*std_out;
 	t_args				*args;
@@ -46,11 +44,14 @@ typedef struct s_phil
 {
 	pid_t 			proc;
 	int 			id;
+	int 			status;
 	long 			t_start;
 	long 			t_current;
 	long			t_last_eat;
 	long 			t_diff;
 	int 			meals;
+	bool			died;
+	bool			sated;
 	t_data 			*data;
 }		t_phil;
 

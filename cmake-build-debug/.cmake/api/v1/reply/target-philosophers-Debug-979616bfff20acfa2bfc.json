@@ -63,8 +63,7 @@
 				8,
 				9,
 				10,
-				11,
-				12
+				11
 			]
 		}
 	],
@@ -108,8 +107,7 @@
 				8,
 				9,
 				10,
-				11,
-				12
+				11
 			]
 		}
 	],
@@ -185,12 +183,6 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "philo_bonus/tools/ft_usleep_bonus.c",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "philo_bonus/tools/ft_free_phils_bonus.c",
 			"sourceGroupIndex" : 0
 		}
 	],
