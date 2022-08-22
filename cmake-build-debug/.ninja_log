@@ -31,3 +31,13 @@
 3	179	1661188744000000000	CMakeFiles/philosophers.dir/philo/tools/ft_atol.c.o	66a5531d955aaca4
 1	54	1661188790000000000	CMakeFiles/philosophers.dir/philo/src/simulator/time_calculator.c.o	4d0ec347f24a1190
 54	89	1661188790000000000	philosophers	5b714970cf57e077
+2	33	1661191284000000000	CMakeFiles/philosophers.dir/philo/tools/ft_is_digit.c.o	649e70b5f83d47cd
+2	66	1661191284000000000	CMakeFiles/philosophers.dir/philo/tools/ft_free_phils.c.o	7047e8a60fec2603
+1	125	1661191284000000000	CMakeFiles/philosophers.dir/philo/src/simulator/simulator.c.o	b6bd29ab917f1d8f
+1	125	1661191284000000000	CMakeFiles/philosophers.dir/philo/src/simulator/watcher.c.o	2e7b57d3c3190d0a
+2	125	1661191284000000000	CMakeFiles/philosophers.dir/philo/src/simulator/time_calculator.c.o	4d0ec347f24a1190
+2	126	1661191284000000000	CMakeFiles/philosophers.dir/philo/src/message_printer.c.o	cddf3e5c01d1dda9
+2	126	1661191284000000000	CMakeFiles/philosophers.dir/philo/tools/ft_atol.c.o	66a5531d955aaca4
+2	126	1661191284000000000	CMakeFiles/philosophers.dir/philo/tools/ft_usleep.c.o	783f9c8a18376438
+2	132	1661191284000000000	CMakeFiles/philosophers.dir/philo/tools/ft_check_invalid_chars.c.o	688d563420c1ce45
+132	158	1661191284000000000	philosophers	5b714970cf57e077

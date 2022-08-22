@@ -57,6 +57,7 @@ static void	check_min_meals(t_phil *phil)
 		phil->data->all_sated = true;
 }
 
+//TODO: fix min meals - some phils eat 1 time too much!
 /*
  * Runs continuously in the background in main thread.
  * Checks if the philosopher has died or is sated.
