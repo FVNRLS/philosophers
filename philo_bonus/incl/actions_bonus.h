@@ -22,8 +22,9 @@
 # define IS_EATING				2
 # define IS_SLEEPING			3
 # define IS_THINKING			4
-# define PHIL_SATED				5
-# define PHIL_DIED				6
+# define FREE					5
+# define PHIL_SATED				6
+# define PHIL_DIED				7
 
 
 

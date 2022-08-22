@@ -15,6 +15,7 @@ add_executable(
         philo_bonus/src/simulator/simulator_bonus.c
         philo_bonus/src/simulator/watcher_bonus.c
         philo_bonus/src/simulator/semaphores_bonus.c
+        philo_bonus/src/simulator/time_calculato_bonus.c
         #ERROR MANAGER
         philo_bonus/src/message_printer_bonus.c
         #TOOLS

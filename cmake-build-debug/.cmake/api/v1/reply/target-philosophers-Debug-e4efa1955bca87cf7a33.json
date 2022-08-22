@@ -63,7 +63,8 @@
 				8,
 				9,
 				10,
-				11
+				11,
+				12
 			]
 		}
 	],
@@ -107,7 +108,8 @@
 				8,
 				9,
 				10,
-				11
+				11,
+				12
 			]
 		}
 	],
@@ -153,6 +155,12 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "philo_bonus/src/simulator/semaphores_bonus.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "philo_bonus/src/simulator/time_calculato_bonus.c",
 			"sourceGroupIndex" : 0
 		},
 		{

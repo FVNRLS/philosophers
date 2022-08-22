@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 13:12:53 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/20 15:56:47 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/21 17:29:07 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,10 @@ void	check_number_times_eat(t_data *data);
 //SIMULATION FUNCTIONS
 void	run_simulation(t_data *data);
 void	check_death(t_phil *phil);
+void	check_if_sated(t_phil *phil);
 void	watch_phils(t_phil *phil);
 void	get_current_time(t_phil *phil);
+void	get_time_diff(t_phil *phil);
 
 //SEMAPHORES (FORKS) CONTROLLER
 void	init_semaphores(t_data *data);

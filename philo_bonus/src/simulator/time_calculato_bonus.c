@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tools_bonus.h                                      :+:      :+:    :+:   */
+/*   time_calculato_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/12 17:03:27 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/21 17:22:07 by rmazurit         ###   ########.fr       */
+/*   Created: 2022/08/21 13:00:11 by rmazurit          #+#    #+#             */
+/*   Updated: 2022/08/21 13:06:37 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TOOLS_H
-# define TOOLS_H
+#include "../../incl/philo_bonus.h"
 
-# include <stdbool.h>
+void	get_current_time(t_phil *phil)
+{
+	struct timeval	current;
 
-long	ft_atol(const char *str);
-void	ft_check_invalid_chars(char *str);
-bool	ft_is_digit(char c);
-void   	ft_usleep(t_phil *phil, long ms);
+	if (gettimeofday(&current, NULL) == -1)
+		exit(EXIT_FAILURE);
+	phil->t_current =
+			((current.tv_sec * 1000) + (current.tv_usec / 1000)) - phil->t_start;
+}
 
-#endif
+void	get_time_diff(t_phil *phil)
+{
+	get_current_time(phil);
+	phil->t_diff = phil->t_current - phil->t_last_eat;
+}

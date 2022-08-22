@@ -6,24 +6,29 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 15:39:15 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/20 18:01:39 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/21 19:11:24 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incl/philo_bonus.h"
 
-static void	check_if_sated(t_phil *phil)
+static void detach_watcher(pthread_t watcher)
 {
-	if (phil->data->min_meals == 0)
-		phil->sated = false;
-	else if (phil->meals >= phil->data->min_meals)
-		phil->sated = true;
+	int	ret;
+
+	ret = pthread_detach(watcher);
+	if (ret != 0)
+		exit(EXIT_FAILURE);
 }
 
 static void	simulate(t_phil *phil)
 {
+	pthread_t	watcher;
+
 	if (phil->id % 2 == 0)
 		ft_usleep(phil, (phil->data->t_eat / 2));
+	if (pthread_create(&watcher, NULL, (void *)&check_death, (void *)phil) != 0)
+		exit(EXIT_FAILURE);
 	while (phil->died == false)
 	{
 		take_forks(phil);
@@ -38,8 +43,8 @@ static void	simulate(t_phil *phil)
 		}
 		ph_sleep(phil);
 		think(phil);
-		check_death(phil);
 	}
+	detach_watcher(watcher);
 }
 
 static void	init_start_params(t_phil *phil)
@@ -50,8 +55,9 @@ static void	init_start_params(t_phil *phil)
 	phil->meals = 0;
 	gettimeofday(&current, NULL);
 	phil->t_start = ((current.tv_sec * 1000) + (current.tv_usec / 1000));
-	phil->died = false;
 	phil->sated = false;
+	phil->status = FREE;
+	phil->died = false;
 }
 
 static void	run_procs(t_phil *phil)
@@ -75,7 +81,6 @@ static void	run_procs(t_phil *phil)
 			simulate(phil);
 		i++;
 	}
-
 }
 
 void	run_simulation(t_data *data)

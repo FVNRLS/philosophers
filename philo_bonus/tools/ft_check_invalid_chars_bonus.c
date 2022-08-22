@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_invalid_chars.c                           :+:      :+:    :+:   */
+/*   ft_check_invalid_chars_bonus.c                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 16:54:50 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/12 17:26:08 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/21 18:55:42 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 		2) more than 1 minus sign was found.
 		3) The argument is not a digit.
 */
-bool	ft_check_invalid_chars(char *str)
+void	ft_check_invalid_chars(char *str)
 {
 	int	i;
 
@@ -29,23 +29,22 @@ bool	ft_check_invalid_chars(char *str)
 	if (!str || str[0] == '\0')
 	{
 		print_error(INVALID_CHARACTERS_FOUND);
-		return (false);
+		exit(EXIT_FAILURE);
 	}
 	if (str[i] == '-')
 		i++;
 	if (str[0] == '-' && str[1] == '\0')
 	{
 		print_error(INVALID_CHARACTERS_FOUND);
-		return (false);
+		exit(EXIT_FAILURE);
 	}
 	while (str[i] != '\0')
 	{
 		if (ft_is_digit(str[i]) == false)
 		{
 			print_error(INVALID_CHARACTERS_FOUND);
-			return (false);
+			exit(EXIT_FAILURE);
 		}
 		i++;
 	}
-	return (true);
 }

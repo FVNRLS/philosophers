@@ -6,40 +6,36 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 14:47:44 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/20 17:54:38 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/21 18:47:18 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incl/philo_bonus.h"
 
-void	get_current_time(t_phil *phil)
-{
-	struct timeval	current;
-
-	if (gettimeofday(&current, NULL) == -1)
-		exit(EXIT_FAILURE);
-	phil->t_current =
-			((current.tv_sec * 1000) + (current.tv_usec / 1000)) - phil->t_start;
-}
-
-static void	get_time_diff(t_phil *phil)
-{
-	get_current_time(phil);
-	phil->t_diff = phil->t_current - phil->t_last_eat;
-//	printf("id: %d 	tdiff: %ld	last_eat: %ld\n", phil->id, phil->t_diff, phil->t_last_eat);
-}
-
 void	check_death(t_phil *phil)
 {
-	get_time_diff(phil);
-	if (phil->t_diff >= phil->data->t_die)
+	while (phil->died == false)
 	{
-		print_status(phil, PHIL_DIED);
-		sem_post(phil->data->fork);
-		sem_post(phil->data->fork);
-		exit(PHIL_DIED);
+		if (phil->status == FREE)
+		{
+			get_time_diff(phil);
+			if (phil->t_diff >= phil->data->t_die)
+			{
+//				printf("id:	%d	tcur:	%ld,	last_eat:	%ld,	diff:	%ld\n", phil->id, phil->t_current, phil->t_last_eat, phil->t_diff);
+				phil->died = true;
+				print_status(phil, PHIL_DIED);
+				exit(PHIL_DIED);
+			}
+		}
 	}
+}
 
+void	check_if_sated(t_phil *phil)
+{
+	if (phil->data->min_meals == 0)
+		phil->sated = false;
+	else if (phil->meals >= phil->data->min_meals)
+		phil->sated = true;
 }
 
 static void check_if_lonely(t_phil *phil)
@@ -64,15 +60,14 @@ void	watch_phils(t_phil *phil)
 		waitpid(-1, &status, 0);
 		if (WIFEXITED(status))
 		{
-			if (WEXITSTATUS(status) == PHIL_SATED)
+			status = WEXITSTATUS(status);
+			if (status == PHIL_SATED)
 				i++;
-			else if (WEXITSTATUS(status) == PHIL_DIED)
+			else if (status == PHIL_DIED || status == EXIT_FAILURE)
 			{
 				kill(0, SIGINT);
-				sem_post(phil->data->std_out);
-				break ;
+				return ;
 			}
 		}
-
 	}
 }

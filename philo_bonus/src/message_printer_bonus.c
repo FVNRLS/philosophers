@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 15:45:18 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/20 18:01:39 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/21 17:53:21 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	print_status(t_phil *phil, int status)
 		printf("%ld %d died", phil->t_current, phil->id);
 		exit(PHIL_DIED);
 	}
-	if (phil->died == false)
+	else if (phil->died == false)
 	{
 		if (status == FORK_TAKEN)
 			printf("%ld %d has taken a fork\n", phil->t_current, phil->id);

@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 17:18:11 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/20 15:56:47 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/21 19:57:37 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include <pthread.h>
 # include <stdio.h>
 # include <stdbool.h>
 # include <fcntl.h>
@@ -49,6 +50,7 @@ typedef struct s_phil
 	long 			t_current;
 	long			t_last_eat;
 	long 			t_diff;
+	sem_t			eat; //todo: implement!
 	int 			meals;
 	bool			died;
 	bool			sated;
