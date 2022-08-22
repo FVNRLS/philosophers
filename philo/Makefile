@@ -6,25 +6,33 @@
 #    By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/10 13:15:15 by rmazurit          #+#    #+#              #
-#    Updated: 2022/08/11 11:53:54 by rmazurit         ###   ########.fr        #
+#    Updated: 2022/08/22 19:44:43 by rmazurit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME 		= 		philo
-BONUS_NAME	=		philo_bonus
 
 CC 			= 		cc
 
 FLAGS		= 		-Wall -Wextra -Werror
 
-SRC 		= 		./src/philo/main.c										\
+SRC 		= 		./main.c									\
+					./src/input_parser/args_checker.c			\
+					./src/input_parser/input_parser.c			\
+					./src/simulator/actions.c					\
+					./src/simulator/mutex_controller.c			\
+					./src/simulator/simulator.c					\
+					./src/simulator/time_calculator.c			\
+					./src/simulator/watcher.c					\
+					./src/message_printer.c						\
 
-BONUS_SRC	= 		./src/philo_bonus/main.c								\
-
-TOOLS_SRC	=		./src/tools/ft_strlen.c									\
+TOOLS_SRC	=		./tools/ft_atol.c							\
+					./tools/ft_check_invalid_chars.c			\
+					./tools/ft_is_digit.c						\
+					./tools/ft_usleep.c							\
+					./tools/ft_free_phils.c						\
 
 OBJ 		= 		${SRC:.c=.o}
-BONUS_OBJ	=		${BONUS_SRC:.c=.o}
 TOOLS_OBJ 	= 		${TOOLS_SRC:.c=.o}
 
 $(NAME): $(OBJ) $(TOOLS_OBJ)
@@ -32,17 +40,12 @@ $(NAME): $(OBJ) $(TOOLS_OBJ)
 
 all: $(NAME)
 
-$(BONUS_NAME): $(BONUS_OBJ) $(TOOLS_OBJ)
-	${CC} ${FLAGS} ${BONUS_OBJ} ${TOOLS_OBJ} -o ${BONUS_NAME}
-
-bonus: $(BONUS_NAME)
-
 clean:
-	rm -f ${OBJ} ${TOOLS_OBJ} ${BONUS_OBJ}
+	rm -f ${OBJ} ${TOOLS_OBJ}
 
 fclean:
-	rm -f ${OBJ} ${TOOLS_OBJ} ${BONUS_OBJ} ${NAME}
+	rm -f ${OBJ} ${TOOLS_OBJ} ${NAME}
 
 re: fclean all
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re
