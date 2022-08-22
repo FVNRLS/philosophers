@@ -25,6 +25,6 @@ void   ft_usleep(t_phil *phil, long ms)
 	{
 		gettimeofday(&now, NULL);
 		i = ((now.tv_sec - start.tv_sec) * 1000) + ((now.tv_usec - start.tv_usec) / 1000);
-		usleep(200);
+		usleep(333);
 	}
 }

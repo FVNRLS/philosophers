@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 14:47:44 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/22 12:39:31 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/22 13:15:34 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ void	check_death(t_phil *phil)
 			{
 				phil->died = true;
 				print_status(phil, PHIL_DIED);
-				exit(PHIL_DIED);
 			}
 		}
 	}

@@ -45,6 +45,7 @@ static void	simulate(t_phil *phil)
 		think(phil);
 	}
 	detach_watcher(watcher);
+	exit(PHIL_DIED);
 }
 
 static void	init_start_params(t_phil *phil)
