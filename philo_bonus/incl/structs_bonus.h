@@ -43,7 +43,7 @@ typedef struct s_data
 
 typedef struct s_phil
 {
-	pid_t 			proc;
+	pid_t 			*proc;
 	int 			id;
 	int 			status;
 	long 			t_start;

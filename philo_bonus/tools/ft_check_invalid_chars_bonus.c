@@ -14,8 +14,6 @@
 
 /*
 	Check for invalid characters inside the provided unconverted argument.
-	An '0' sign before a number will be ignored.
-	Also -0 is not considered as an error.
 	Set error flag to true if:
 		1) No argument provided (string is empty).
 		2) more than 1 minus sign was found.

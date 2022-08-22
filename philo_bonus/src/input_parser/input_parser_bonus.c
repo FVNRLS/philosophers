@@ -12,6 +12,9 @@
 
 #include "../../incl/philo_bonus.h"
 
+/*
+ * Parses and checks the arguments.
+ * */
 static void	parse_args(t_data *data)
 {
 	check_phil_num(data);
@@ -24,6 +27,10 @@ static void	parse_args(t_data *data)
 }
 
 /*
+ * Checks the number of arguments and if valid, parses the arguments one by one.
+ * Checks if the input arguments contain any invalid characters
+ * 		-> if yes, program exits with error code.
+
  * Arguments:
  * number_of_philosophers
  * time_to_die

@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 15:20:06 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/22 11:46:16 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/22 16:05:01 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,20 @@ static void destroy_sem_forks(t_data *data)
 	data->fork = NULL;
 }
 
+/* Close and unlink the initialized semaphores.*/
 void	destroy_semaphores(t_data *data)
 {
 	destroy_sem_stdout(data);
 	destroy_sem_forks(data);
 }
 
+/*
+ * In case the program crashed before or terminated unexpectedly, run sem_unlink
+ * for all semaphores.
+ * Then initialize the two semaphores with protection:
+		std_out: to write to stdout to avoid the encoded output.
+		forks: stands for the number of forks (init number of philosophers).
+ * */
 void	init_semaphores(t_data *data)
 {
 	sem_unlink("/tmp/std_out");
