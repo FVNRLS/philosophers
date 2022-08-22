@@ -12,6 +12,7 @@
 
 #include "../incl/philo.h"
 
+/* Prints error message depending on provided error key */
 void	print_error(int error_key)
 {
 	if (error_key == INVALID_NUMBER_OF_ARGUMENTS)
@@ -30,6 +31,14 @@ void	print_error(int error_key)
 		printf("Error: invalid number of times to eat.");
 }
 
+/*
+ * Prints the current timestamp, the philosopher's ID and his status depending
+ * on provided status key.
+ * To avoids a scrambled output, every print is protected with std_out mutex,
+ * so only one phil. can print his status in a time.
+ * First the status PHIL_DIED is always checked.
+		-> If the status is active, no other statuses can be printed.
+ * */
 void	print_status(t_phil *phil, int status)
 {
 	pthread_mutex_lock(&phil->data->std_out);

@@ -6,7 +6,7 @@
 #    By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/10 13:15:15 by rmazurit          #+#    #+#              #
-#    Updated: 2022/08/22 13:28:25 by rmazurit         ###   ########.fr        #
+#    Updated: 2022/08/22 17:39:08 by rmazurit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ SRC 		= 		./main_bonus.c								\
 					./src/simulator/actions_bonus.c				\
 					./src/simulator/semaphores_bonus.c			\
 					./src/simulator/simulator_bonus.c			\
-					./src/simulator/time_calculato_bonus.c		\
+					./src/simulator/time_calculator_bonus.c		\
 					./src/simulator/watcher_bonus.c				\
 					./src/message_printer_bonus.c				\
 
@@ -40,10 +40,10 @@ $(NAME): $(OBJ) $(TOOLS_OBJ)
 all: $(NAME)
 
 clean:
-	rm -f ${OBJ} ${TOOLS_OBJ} ${BONUS_OBJ}
+	rm -f ${OBJ} ${TOOLS_OBJ}
 
 fclean:
-	rm -f ${OBJ} ${TOOLS_OBJ} ${BONUS_OBJ} ${NAME}
+	rm -f ${OBJ} ${TOOLS_OBJ} ${NAME}
 
 re: fclean all
 

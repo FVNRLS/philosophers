@@ -6,12 +6,18 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 14:47:44 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/19 16:16:00 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/22 19:25:52 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incl/philo.h"
 
+/*
+ * Hardcoded solution if the user enters the number 1 as the first argument
+ * (number of philosophers).
+ * The philosopher must take only one fork, but must not start eating and
+ * dies instantly.
+ * */
 static bool	check_if_lonely(t_phil *phil)
 {
 	if (phil->data->n_phil == 1)
@@ -25,6 +31,13 @@ static bool	check_if_lonely(t_phil *phil)
 	return (false);
 }
 
+/*
+ * Check if all philosopher have eaten once min_meals.
+ * For this iterates through all philosophers and compares the number of meals.
+ * If all are sated, set the sated flag to true.
+ * It's not defined by the subject what a philosopher should do when sated,
+ * so he continues to eat until ALL philosophers are sated.
+ * */
 static void	check_min_meals(t_phil *phil)
 {
 	int i;
@@ -44,28 +57,16 @@ static void	check_min_meals(t_phil *phil)
 		phil->data->all_sated = true;
 }
 
-void	get_current_time(t_phil *phil)
-{
-	struct timeval	current;
-
-	gettimeofday(&current, NULL);
-	phil->t_current =
-			((current.tv_sec * 1000) + (current.tv_usec / 1000)) - phil->data->t_start;
-}
-
-void	get_time_diff(t_phil *phil)
-{
-	get_current_time(phil);
-	phil->t_diff = phil->t_current - phil->t_last_eat;
-}
-
+/*
+ * Runs continuously in the background in main thread.
+ * Checks if the philosopher has died or is sated.
+ * If yes - the appropriate flag is set to true and the simulation is stopped.
+ * */
 void	watch_phils(t_phil *phil)
 {
 	int 	i;
-	bool 	lonely;
 
-	lonely = check_if_lonely(phil);
-	if (lonely == true)
+	if (check_if_lonely(phil) == true)
 		return ;
 	i = 0;
 	while (i < phil->data->n_phil)
@@ -80,7 +81,6 @@ void	watch_phils(t_phil *phil)
 			{
 				phil->data->died = true;
 				print_status(&phil[i], PHIL_DIED);
-				printf("diff phil %d:	%ld		last eat:	%ld\n", phil[i].id, phil[i].t_diff, phil[i].t_last_eat);
 				return ;
 			}
 		}

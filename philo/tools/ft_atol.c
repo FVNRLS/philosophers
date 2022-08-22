@@ -12,6 +12,7 @@
 
 #include "../incl/philo.h"
 
+/* Converts a provided string to a number with of type long */
 long	ft_atol(const char *str)
 {
 	int		i;

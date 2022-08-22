@@ -6,15 +6,13 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 14:47:44 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/22 17:06:27 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/22 17:20:44 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incl/philo_bonus.h"
 
-/*
- *
- * */
+/* Kills all child processes. */
 static void	kill_all_procs(t_phil *phil)
 {
 	int	i;

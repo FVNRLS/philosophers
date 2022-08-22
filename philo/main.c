@@ -6,20 +6,21 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 13:11:48 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/19 16:11:06 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/22 17:45:46 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "incl/philo.h"
 
-void check_leaks()
-{
-	system("leaks philosophers");
-}
-
+/*
+ * Each philosopher is a thread defined in the phil structure.
+ * The forks are initialized as mutexes.
+ * The parsed arguments and mutexes, are stored in the data structure and all
+ * threads have access to them.
+ * After simulation, the mutexes are destroyed.
+ * */
  int	main(int argc, char **argv)
  {
-//	atexit(check_leaks);
 	t_data		data;
 	t_args		args;
 	int 		exit_ret;

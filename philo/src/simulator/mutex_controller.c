@@ -12,6 +12,11 @@
 
 #include "../../incl/philo.h"
 
+/*
+ * Initializes two mutexes with protection:
+		std_out: to write to stdout to avoid the encoded output.
+		forks: stands for the number of forks (init number of philosophers).
+*/
 int	init_mutexes(t_data *data)
 {
 	int	i;
@@ -29,6 +34,7 @@ int	init_mutexes(t_data *data)
 	return (EXIT_SUCCESS);
 }
 
+/* Destroys/frees the initialized mutexes.*/
 void	destroy_mutexes(t_data *data)
 {
 	int	i;

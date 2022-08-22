@@ -12,6 +12,10 @@
 
 #include "../../incl/philo.h"
 
+/*
+ * Parses and checks the standard arguments.
+ * If return value is false, the program termination is caused.
+ * */
 static bool	parse_args(t_data *data)
 {
 	bool	phil_num_valid;
@@ -38,6 +42,10 @@ static bool	parse_args(t_data *data)
 }
 
 /*
+ * Checks the number of arguments and if valid, parses the arguments one by one.
+ * Checks if the input arguments contain any invalid characters
+ * 		-> if yes, program exits with error code.
+
  * Arguments:
  * number_of_philosophers
  * time_to_die

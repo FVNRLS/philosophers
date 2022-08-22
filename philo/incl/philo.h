@@ -32,6 +32,7 @@ int		run_simulation(t_data *data);
 void	watch_phils(t_phil *phil);
 void	get_time_diff(t_phil *phil);
 void	get_current_time(t_phil *phil);
+void	get_time_diff(t_phil *phil);
 
 //MUTEX (FORKS) CONTROLLER
 int		init_mutexes(t_data *data);

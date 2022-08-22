@@ -12,6 +12,7 @@
 
 #include "../incl/philo.h"
 
+/* free the allocated memory for the philosophers array*/
 void	ft_free_phils(t_phil *phil)
 {
 	free(phil->thread);

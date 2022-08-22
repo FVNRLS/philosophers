@@ -12,6 +12,7 @@
 
 #include <stdbool.h>
 
+/* checks if the character is a digit in ASCII*/
 bool	ft_is_digit(char c)
 {
 	if (c >= '0' && c <= '9')

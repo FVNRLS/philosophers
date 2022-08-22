@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   input_parser.c                                     :+:      :+:    :+:   */
+/*   input_parser_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 15:34:24 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/22 11:46:16 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/22 15:38:12 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incl/philo_bonus.h"
 
-/*
- * Parses and checks the arguments.
- * */
+/* Parses and checks the standard arguments. */
 static void	parse_args(t_data *data)
 {
 	check_phil_num(data);

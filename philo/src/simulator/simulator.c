@@ -12,6 +12,19 @@
 
 #include "../../incl/philo.h"
 
+/*
+ * Main routine function that every philosopher (thread) executes as long
+ * he is not dead or sated.
+ * In main thread the watcher thread is created, which in parallel
+ * monitors the status of the philosopher and checks whether he died or not.
+ * To prevent a deadlock, all even philosophers start to eat with
+ * (phil->data->t_eat / 2) delay -> synchronized threading.
+ * The routine looks like this and rotates in a while-loop:
+	take forks -> eat -> sleep -> think -> take forks -> eat -> sleep ....
+ * After every meal the min time of meals is checked, so if the philosopher is
+ * sated, he exits with code PHIL_SATED.
+ * If the philosopher dies or is sated, while loop stops by appropriate flags.
+ * */
 static void	*simulate(void *arg)
 {
 	t_phil	*phil;
@@ -23,12 +36,18 @@ static void	*simulate(void *arg)
 	{
 		take_forks(phil);
 		eat(phil);
+		phil->meals++;
 		ph_sleep(phil);
 		think(phil);
 	}
 	return (NULL);
 }
 
+/*
+ * Joins all threads to the main thread after the execution.
+ * The function returns false if join fails, which causes exit
+ * fom the program with EXIT_FAILURE code.
+ * */
 static bool join_threads(t_phil *phil, t_data *data)
 {
 	int	i;
@@ -43,6 +62,13 @@ static bool join_threads(t_phil *phil, t_data *data)
 	return (true);
 }
 
+/*
+ * Pass the array of structures inside the pthread_create function and create
+ * threads, which are the philosophers.
+ * By creating every thread starts the routine simulation process.
+ * The function returns false if threads couldn't be created, which causes exit
+ * fom the program with EXIT_FAILURE code.
+ * */
 static bool	start_threads(t_phil *phil, t_data *data)
 {
 	int i;
@@ -54,13 +80,22 @@ static bool	start_threads(t_phil *phil, t_data *data)
 	i = 0;
 	while (i < data->n_phil)
 	{
-		if (pthread_create(&phil->thread[i], NULL, &simulate, (void *)&phil[i]) != 0)
+		if (pthread_create(&phil->thread[i], NULL, &simulate,
+						   (void *)&phil[i]) != 0)
 			return (false);
 		i++;
 	}
 	return (true);
 }
 
+/*
+ * Initializes the start parameters for each philosopher (ID, forks, status..).
+ * All philosophers refer to the same data phil->data.
+ * For each phil. the forks left ad right are defined.
+ * The start time is initialized, and is the same for all philosophers.
+ * Status FREE is for watcher and means with true, that the philosopher can be
+ * checked and killed by the watcher in the time.
+ * */
 static void	init_phils(t_phil *phil, t_data *data)
 {
 	int i;
@@ -83,9 +118,17 @@ static void	init_phils(t_phil *phil, t_data *data)
 	phil->data->died = false;
 	phil->data->all_sated = false;
 	gettimeofday(&phil->data->time, NULL);
-	phil->data->t_start = ((phil->data->time.tv_sec * 1000) + (phil->data->time.tv_usec / 1000));
+	phil->data->t_start = ((phil->data->time.tv_sec * 1000)
+			+ (phil->data->time.tv_usec / 1000));
 }
 
+/*
+ * Allocate and try to run the threads:
+ * If successful:
+ 	-> start the looped watcher to intercept the flags 'died' and 'sated'.
+ * At the end free the allocated memory for the philosophers.
+ * Join the threads to the main thread after the execution.
+ * */
 int	run_simulation(t_data *data)
 {
 	t_phil 		*phil;

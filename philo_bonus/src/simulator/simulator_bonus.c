@@ -26,6 +26,8 @@ static void detach_watcher(pthread_t watcher)
  * he is not dead or sated.
  * Before the actual routine, a watcher thread is created, which in parallel
  * monitors the status of the philosopher and checks whether he died or not.
+ * To prevent a deadlock, all even philosophers start to eat with
+ * (phil->data->t_eat / 2) delay -> synchronized processes.
  * The routine looks like this and rotates in a while-loop:
 	take forks -> eat -> sleep -> think -> take forks -> eat -> sleep ....
  * After every meal the min time of meals is checked, so if the philosopher is
