@@ -26,10 +26,10 @@ void	take_forks(t_phil *phil)
 
 void	eat(t_phil *phil)
 {
-	get_current_time(phil);
-	phil->t_last_eat = phil->t_current;
 	if (phil->died  == false)
 	{
+		get_current_time(phil);
+		phil->t_last_eat = phil->t_current;
 		phil->status = IS_EATING;
 		print_status(phil, IS_EATING);
 		ft_usleep(phil, phil->data->t_eat);

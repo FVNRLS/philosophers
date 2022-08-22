@@ -6,12 +6,17 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 14:47:44 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/22 11:46:16 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/22 12:39:31 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incl/philo_bonus.h"
 
+/*
+ * A routine watcher (thread) function, which is continuously running in the
+ * background of every child process.
+ *
+ * */
 void	check_death(t_phil *phil)
 {
 	while (phil->died == false)
@@ -21,7 +26,6 @@ void	check_death(t_phil *phil)
 			get_time_diff(phil);
 			if (phil->t_diff >= phil->data->t_die)
 			{
-//				printf("id:	%d	tcur:	%ld,	last_eat:	%ld,	diff:	%ld\n", phil->id, phil->t_current, phil->t_last_eat, phil->t_diff);
 				phil->died = true;
 				print_status(phil, PHIL_DIED);
 				exit(PHIL_DIED);
@@ -44,7 +48,7 @@ static void check_if_lonely(t_phil *phil)
 	{
 		print_status(phil, FORK_TAKEN);
 		print_status(phil, PHIL_DIED);
-		kill(0, SIGINT);
+		kill(0, SIGKILL);
 	}
 }
 
@@ -65,7 +69,7 @@ void	watch_phils(t_phil *phil)
 				i++;
 			else if (status == PHIL_DIED || status == EXIT_FAILURE)
 			{
-				kill(0, SIGINT);
+				kill(0, SIGKILL);
 				return ;
 			}
 		}
