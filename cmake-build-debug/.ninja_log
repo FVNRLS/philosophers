@@ -98,3 +98,17 @@
 37	181	1661104658000000000	CMakeFiles/philosophers.dir/philo_bonus/tools/ft_usleep_bonus.c.o	68273cc2056def60
 1	187	1661104658000000000	CMakeFiles/philosophers.dir/philo_bonus/main_bonus.c.o	c239aeefcb06653d
 188	232	1661104658000000000	philosophers	29fe09ad5dd41c75
+5	190	1661161990000000000	CMakeFiles/philosophers.dir/philo_bonus/tools/ft_is_digit_bonus.c.o	f585f746875476d4
+2	281	1661161990000000000	CMakeFiles/philosophers.dir/philo_bonus/main_bonus.c.o	c239aeefcb06653d
+2	281	1661161990000000000	CMakeFiles/philosophers.dir/philo_bonus/src/input_parser/input_parser_bonus.c.o	116a5b1b0d649bcf
+4	281	1661161990000000000	CMakeFiles/philosophers.dir/philo_bonus/tools/ft_check_invalid_chars_bonus.c.o	f8d1c038fa25fd7b
+5	281	1661161990000000000	CMakeFiles/philosophers.dir/philo_bonus/tools/ft_usleep_bonus.c.o	68273cc2056def60
+2	327	1661161990000000000	CMakeFiles/philosophers.dir/philo_bonus/src/input_parser/args_checker_bonus.c.o	9903421531125124
+2	327	1661161990000000000	CMakeFiles/philosophers.dir/philo_bonus/src/simulator/actions_bonus.c.o	7f38c135141b69fa
+3	327	1661161990000000000	CMakeFiles/philosophers.dir/philo_bonus/src/simulator/simulator_bonus.c.o	9341eb7fd843d34d
+3	327	1661161990000000000	CMakeFiles/philosophers.dir/philo_bonus/src/simulator/watcher_bonus.c.o	6529457f86715a0f
+3	327	1661161990000000000	CMakeFiles/philosophers.dir/philo_bonus/src/simulator/semaphores_bonus.c.o	70e69a012df03615
+3	327	1661161990000000000	CMakeFiles/philosophers.dir/philo_bonus/src/simulator/time_calculato_bonus.c.o	6501ee44c69cd1d1
+3	327	1661161990000000000	CMakeFiles/philosophers.dir/philo_bonus/src/message_printer_bonus.c.o	3bb2bb982e39e5d
+4	350	1661161990000000000	CMakeFiles/philosophers.dir/philo_bonus/tools/ft_atol_bonus.c.o	25ab9bfadc535b24
+350	432	1661161991000000000	philosophers	29fe09ad5dd41c75
