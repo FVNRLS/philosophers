@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 17:18:11 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/23 12:29:29 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/23 14:40:52 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@
 # include <fcntl.h>
 # include <sys/time.h>
 # include <semaphore.h>
+
+# define MAX_THREADS 2000
 
 typedef struct s_args
 {

@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 14:43:23 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/23 13:19:37 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/23 13:20:18 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@
  * */
 void	take_forks(t_phil *phil)
 {
-	phil->status = FREE;
 	if (phil->data->died == false)
 	{
+		phil->status = FREE;
 		pthread_mutex_lock(&phil->data->forks[phil->fork_left]);
 		print_status(phil, FORK_TAKEN);
 		pthread_mutex_lock(&phil->data->forks[phil->fork_right]);

@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 14:47:44 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/23 14:02:12 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/23 14:47:31 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,31 +50,31 @@ void 	check_if_sated(t_phil *phil)
  * If yes - the appropriate flag is set to true and the simulation is stopped.
  * */
 
-//TODO: problem with time!!!!!! -> shoukd be ulong
 void	watch_phils(t_phil *phil)
 {
 	int 	i;
 
 	if (check_if_lonely(phil) == true)
 		return ;
-	i = 0;
-	while (i < phil->data->n_phil)
+	while (phil->data->died == false)
 	{
-		if (phil->data->n_sated == phil->data->n_phil - 1)
-			break ;
-		if (phil[i].status == FREE)
+		i = 0;
+		while (i < phil->data->n_phil)
 		{
-			get_time_diff(&phil[i]);
-			if (phil[i].t_diff >= phil->data->t_die)
-			{
-				phil->data->died = true;
-				put_all_forks(phil->data);
-				print_status(&phil[i], PHIL_DIED);
+			if (phil->data->n_sated == phil->data->n_phil)
 				return ;
+			if (phil[i].status == FREE)
+			{
+				get_time_diff(&phil[i]);
+				if (phil[i].t_diff >= phil->data->t_die)
+				{
+					phil->data->died = true;
+					put_all_forks(phil->data);
+					print_status(&phil[i], PHIL_DIED);
+					return ;
+				}
 			}
+			i++;
 		}
-		i++;
-		if (i == phil->data->n_phil)
-			i = 0;
 	}
 }
