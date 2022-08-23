@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 14:47:44 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/23 16:52:11 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/23 19:53:45 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,40 +44,46 @@ void	check_if_sated(t_phil *phil)
 	}
 }
 
+/* Checks if a particular philosopher exceeded the t_die limit */
+static bool	check_death(t_phil *phil, int i)
+{
+	get_time_diff(&phil[i]);
+	if (phil[i].t_diff >= phil->data->t_die)
+	{
+		phil->data->died = true;
+		put_all_forks(phil->data);
+		print_status(&phil[i], PHIL_DIED);
+		return (true);
+	}
+	return (false);
+}
+
 /*
  * Runs continuously in the background in main thread.
  * Checks if the philosopher has died or is sated.
  * If yes - the appropriate flag is set to true and the simulation is stopped.
  * */
-
 void	watch_phils(t_phil *phil)
 {
-	int	i;
+	int		i;
+	bool	died;
 
+	died = false;
 	if (check_if_lonely(phil) == true)
 		return ;
 	while (phil->data->died == false)
 	{
 		i = 0;
-		while (i < phil->data->n_phil)
+		while (i++ < phil->data->n_phil)
 		{
 			if (phil[i].sated == true)
-			{
 				phil->data->n_sated++;
-				if (phil->data->n_sated == phil->data->n_phil)
-					return ;
-			}
+			if (phil->data->n_sated == phil->data->n_phil)
+				return ;
 			if (phil[i].status == FREE)
-			{
-				get_time_diff(&phil[i]);
-				if (phil[i].t_diff >= phil->data->t_die)
-				{
-					phil->data->died = true;
-					put_all_forks(phil->data);
-					print_status(&phil[i], PHIL_DIED);
-					return ;
-				}
-			}
+				died = check_death(phil, i);
+			if (died == true)
+				return ;
 			i++;
 		}
 	}

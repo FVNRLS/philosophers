@@ -57,3 +57,10 @@
 94	127	1661267056000000000	philosophers	5b714970cf57e077
 2	57	1661267068000000000	CMakeFiles/philosophers.dir/philo/src/message_printer.c.o	cddf3e5c01d1dda9
 57	83	1661267068000000000	philosophers	5b714970cf57e077
+1	58	1661270307000000000	CMakeFiles/philosophers.dir/philo/src/simulator/watcher.c.o	2e7b57d3c3190d0a
+58	97	1661270308000000000	philosophers	5b714970cf57e077
+2	377	1661277241000000000	CMakeFiles/philosophers.dir/philo/src/simulator/watcher.c.o	2e7b57d3c3190d0a
+378	481	1661277241000000000	philosophers	5b714970cf57e077
+2	427	1661277552000000000	CMakeFiles/philosophers.dir/philo/src/simulator/watcher.c.o	2e7b57d3c3190d0a
+2	454	1661277552000000000	CMakeFiles/philosophers.dir/philo/main.c.o	9cc9989fa5b6e489
+454	552	1661277552000000000	philosophers	5b714970cf57e077
