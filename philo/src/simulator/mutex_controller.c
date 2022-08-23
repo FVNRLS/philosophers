@@ -34,6 +34,18 @@ int	init_mutexes(t_data *data)
 	return (EXIT_SUCCESS);
 }
 
+void	put_all_forks(t_data *data)
+{
+	int i;
+
+	i = 0;
+	while (i < data->n_phil)
+	{
+		pthread_mutex_unlock(&data->forks[i]);
+		i++;
+	}
+}
+
 /* Destroys/frees the initialized mutexes.*/
 void	destroy_mutexes(t_data *data)
 {

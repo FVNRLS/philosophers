@@ -20,7 +20,7 @@
 bool	check_phil_num(t_data *data)
 {
 	data->n_phil = (int)ft_atol(data->args->av[1]);
-	if (data->n_phil < 1 || data->n_phil > MAX_THREADS)
+	if (data->n_phil < 1)
 	{
 		print_error(INVALID_NUMBER_OF_PHILOSOPHERS);
 		return (false);

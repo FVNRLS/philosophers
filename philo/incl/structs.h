@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 17:18:11 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/19 11:08:22 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/23 12:29:29 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ typedef struct s_data
 	long			min_meals;
 	long 			t_start;
 	bool			died;
-	bool			all_sated;
+	int 			n_sated;
 	pthread_mutex_t *forks;
 	pthread_mutex_t std_out;
 	struct timeval	time;
@@ -49,6 +49,7 @@ typedef struct s_phil
 	pthread_t 		*thread;
 	int 			id;
 	int 			status;
+	bool			sated;
 	int 			fork_left;
 	int 			fork_right;
 	long 			t_current;

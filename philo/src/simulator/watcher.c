@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 14:47:44 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/22 19:25:52 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/23 14:02:12 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,37 +32,25 @@ static bool	check_if_lonely(t_phil *phil)
 }
 
 /*
- * Check if all philosopher have eaten once min_meals.
- * For this iterates through all philosophers and compares the number of meals.
- * If all are sated, set the sated flag to true.
- * It's not defined by the subject what a philosopher should do when sated,
- * so he continues to eat until ALL philosophers are sated.
+ * Check if all philosopher have eaten min_meals.
+ * If yes - set 'sated' flag to true, which causes stop of the simulation.
  * */
-static void	check_min_meals(t_phil *phil)
+void 	check_if_sated(t_phil *phil)
 {
-	int i;
-	int min;
-
-	if (phil->data->min_meals == 0)
-		return ;
-	i = 0;
-	min = phil[0].meals;
-	while (i < phil->data->n_phil)
+	if (phil->meals == phil->data->min_meals)
 	{
-		if (phil[i].meals < min)
-			min = phil[i].meals;
-		i++;
+		phil->sated = true;
+		return ;
 	}
-	if (min >= phil->data->min_meals)
-		phil->data->all_sated = true;
 }
 
-//TODO: fix min meals - some phils eat 1 time too much!
 /*
  * Runs continuously in the background in main thread.
  * Checks if the philosopher has died or is sated.
  * If yes - the appropriate flag is set to true and the simulation is stopped.
  * */
+
+//TODO: problem with time!!!!!! -> shoukd be ulong
 void	watch_phils(t_phil *phil)
 {
 	int 	i;
@@ -72,15 +60,15 @@ void	watch_phils(t_phil *phil)
 	i = 0;
 	while (i < phil->data->n_phil)
 	{
-		check_min_meals(phil);
-		if (phil->data->all_sated == true)
-			return ;
+		if (phil->data->n_sated == phil->data->n_phil - 1)
+			break ;
 		if (phil[i].status == FREE)
 		{
 			get_time_diff(&phil[i]);
 			if (phil[i].t_diff >= phil->data->t_die)
 			{
 				phil->data->died = true;
+				put_all_forks(phil->data);
 				print_status(&phil[i], PHIL_DIED);
 				return ;
 			}

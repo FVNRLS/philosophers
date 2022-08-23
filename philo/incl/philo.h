@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 13:12:53 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/18 13:17:33 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/23 13:58:05 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 # include "./actions.h"
 # include "./error.h"
 # include "./tools.h"
-
-# define MAX_THREADS	10240
 
 //INPUT PARSER
 int		parse_input(t_data *data);
@@ -30,6 +28,8 @@ bool	check_number_times_eat(t_data *data);
 //SIMULATION FUNCTIONS
 int		run_simulation(t_data *data);
 void	watch_phils(t_phil *phil);
+void	put_all_forks(t_data *data);
+void 	check_if_sated(t_phil *phil);
 void	get_time_diff(t_phil *phil);
 void	get_current_time(t_phil *phil);
 void	get_time_diff(t_phil *phil);
