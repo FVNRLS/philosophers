@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 14:47:44 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/23 14:48:52 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/23 16:52:11 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,12 @@ void	watch_phils(t_phil *phil)
 		i = 0;
 		while (i < phil->data->n_phil)
 		{
-			if (phil->data->n_sated == phil->data->n_phil)
-				return ;
+			if (phil[i].sated == true)
+			{
+				phil->data->n_sated++;
+				if (phil->data->n_sated == phil->data->n_phil)
+					return ;
+			}
 			if (phil[i].status == FREE)
 			{
 				get_time_diff(&phil[i]);

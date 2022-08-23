@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 15:39:15 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/23 16:00:51 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/23 16:52:11 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,7 @@ static void	*simulate(void *arg)
 		phil->meals++;
 		check_if_sated(phil);
 		if (phil->sated == true)
-		{
-			phil->data->n_sated++;
 			break ;
-		}
 		ph_sleep(phil);
 		think(phil);
 	}
