@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 14:47:44 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/22 17:20:44 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/23 16:21:12 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	check_if_sated(t_phil *phil)
  * The philosopher must take only one fork, but must not start eating and
  * dies instantly.
  * */
-static void check_if_lonely(t_phil *phil)
+static void	check_if_lonely(t_phil *phil)
 {
 	if (phil->data->n_phil == 1)
 	{
@@ -88,8 +88,8 @@ static void check_if_lonely(t_phil *phil)
  * */
 void	watch_phils(t_phil *phil)
 {
-	int		status;
-	int 	i;
+	int	status;
+	int	i;
 
 	check_if_lonely(phil);
 	i = 0;

@@ -13,7 +13,7 @@
 #ifndef TOOLS_H
 # define TOOLS_H
 
-# include <stdbool.h>
+# include "structs.h"
 
 long	ft_atol(const char *str);
 bool	ft_check_invalid_chars(char *str);

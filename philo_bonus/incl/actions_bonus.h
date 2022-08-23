@@ -6,14 +6,12 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 17:15:15 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/22 11:46:16 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/23 16:07:09 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
-#ifndef ACTIONS_H
-# define ACTIONS_H
+#ifndef ACTIONS_BONUS_H
+# define ACTIONS_BONUS_H
 
 # include "structs_bonus.h"
 
@@ -25,8 +23,6 @@
 # define FREE					5
 # define PHIL_SATED				6
 # define PHIL_DIED				7
-
-
 
 //PHILOSOPHERS ACTIONS
 void	take_forks(t_phil *phil);

@@ -6,13 +6,13 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 15:39:15 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/22 16:39:44 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/23 16:19:10 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incl/philo_bonus.h"
 
-static void detach_watcher(pthread_t watcher)
+static void	detach_watcher(pthread_t watcher)
 {
 	int	ret;
 
@@ -90,7 +90,7 @@ static void	init_start_params(t_phil *phil)
  * */
 static bool	run_procs(t_phil *phil)
 {
-	int i;
+	int	i;
 
 	init_start_params(phil);
 	i = 0;

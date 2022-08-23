@@ -6,12 +6,12 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 13:12:53 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/22 11:46:16 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/23 16:08:15 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHILO_H
-# define PHILO_H
+#ifndef PHILO_BONUS_H
+# define PHILO_BONUS_H
 
 # include "./actions_bonus.h"
 # include "./error_bonus.h"
@@ -20,7 +20,7 @@
 # define RIGHTS	0644
 
 //INPUT PARSER
-void 	parse_input(t_data *data);
+void	parse_input(t_data *data);
 void	check_phil_num(t_data *data);
 void	check_time_to_die(t_data *data);
 void	check_time_to_eat(t_data *data);

@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ERROR_H
-# define ERROR_H
+#ifndef ERROR_BONUS_H
+# define ERROR_BONUS_H
 
 //ERROR CODES:
 # define INVALID_CHARACTERS_FOUND 		1

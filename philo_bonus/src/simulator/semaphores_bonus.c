@@ -21,7 +21,7 @@ static void	destroy_sem_stdout(t_data *data)
 	data->std_out = NULL;
 }
 
-static void destroy_sem_forks(t_data *data)
+static void	destroy_sem_forks(t_data *data)
 {
 	if (!data->fork)
 		exit(EXIT_FAILURE);

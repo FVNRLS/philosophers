@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   time_calculato_bonus.c                             :+:      :+:    :+:   */
+/*   time_calculator_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 13:00:11 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/22 16:45:53 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/23 16:20:27 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ void	get_current_time(t_phil *phil)
 
 	if (gettimeofday(&current, NULL) == -1)
 		exit(EXIT_FAILURE);
-	phil->t_current =
-			((current.tv_sec * 1000) + (current.tv_usec / 1000))
-			- phil->t_start;
+	phil->t_current
+		= ((current.tv_sec * 1000) + (current.tv_usec / 1000))
+		- phil->t_start;
 }
 
 /*

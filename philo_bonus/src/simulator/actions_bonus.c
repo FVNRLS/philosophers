@@ -24,7 +24,7 @@
  * */
 void	take_forks(t_phil *phil)
 {
-	if (phil->died  == false)
+	if (phil->died == false)
 	{
 		phil->status = FREE;
 		sem_wait(phil->data->fork);
@@ -47,7 +47,7 @@ void	take_forks(t_phil *phil)
  * */
 void	eat(t_phil *phil)
 {
-	if (phil->died  == false)
+	if (phil->died == false)
 	{
 		get_current_time(phil);
 		phil->t_last_eat = phil->t_current;
@@ -86,4 +86,3 @@ void	think(t_phil *phil)
 	if (phil->died == false)
 		print_status(phil, IS_THINKING);
 }
-
