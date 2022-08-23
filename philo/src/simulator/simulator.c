@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 15:39:15 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/23 14:53:02 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/23 15:15:46 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,18 +147,21 @@ int	run_simulation(t_data *data)
 		return (EXIT_FAILURE);
 	init_phils(phil, data);
 	threads_started = start_threads(phil, data);
-	if (threads_started == false)
+	if (threads_started == true)
+	{
+		watch_phils(phil);
+		threads_joined = join_threads(phil, data);
+		if (threads_joined == false)
+		{
+			ft_free_phils(phil);
+			return (EXIT_FAILURE);
+		}
+	}
+	else
 	{
 		ft_free_phils(phil);
 		return (EXIT_FAILURE);
 	}
-	watch_phils(phil);
-	threads_joined = join_threads(phil, data);
 	ft_free_phils(phil);
-	if (threads_joined == false)
-	{
-		ft_free_phils(phil);
-		return (EXIT_FAILURE);
-	}
 	return (EXIT_SUCCESS);
 }

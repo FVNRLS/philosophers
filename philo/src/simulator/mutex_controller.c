@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 15:20:06 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/18 14:13:22 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/23 14:01:31 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,16 @@ int	init_mutexes(t_data *data)
 {
 	int	i;
 
-	pthread_mutex_init(&data->std_out, NULL);
+	if (pthread_mutex_init(&data->std_out, NULL) != 0)
+		return (EXIT_FAILURE);
 	data->forks = malloc((sizeof(pthread_mutex_t) * data->n_phil));
 	if (!data->forks)
 		return (EXIT_FAILURE);
 	i = 0;
 	while (i < data->n_phil)
 	{
-		pthread_mutex_init(&data->forks[i], NULL);
+		if (pthread_mutex_init(&data->forks[i], NULL) != 0)
+			return (EXIT_FAILURE);
 		i++;
 	}
 	return (EXIT_SUCCESS);
