@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 14:47:44 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/23 14:47:31 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/23 14:48:52 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static bool	check_if_lonely(t_phil *phil)
  * Check if all philosopher have eaten min_meals.
  * If yes - set 'sated' flag to true, which causes stop of the simulation.
  * */
-void 	check_if_sated(t_phil *phil)
+void	check_if_sated(t_phil *phil)
 {
 	if (phil->meals == phil->data->min_meals)
 	{
@@ -52,7 +52,7 @@ void 	check_if_sated(t_phil *phil)
 
 void	watch_phils(t_phil *phil)
 {
-	int 	i;
+	int	i;
 
 	if (check_if_lonely(phil) == true)
 		return ;

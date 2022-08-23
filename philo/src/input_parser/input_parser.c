@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 15:34:24 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/17 11:40:03 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/23 15:54:34 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ static bool	parse_args(t_data *data)
 	t_to_eat_valid = check_time_to_eat(data);
 	t_to_sleep_valid = check_time_to_sleep(data);
 	data->min_meals = 0;
-	if (phil_num_valid == false || t_to_die_valid == false ||
-	t_to_eat_valid == false || t_to_sleep_valid == false)
+	if (phil_num_valid == false || t_to_die_valid == false
+		|| t_to_eat_valid == false || t_to_sleep_valid == false)
 		return (false);
 	if (data->args->ac == 6)
 	{
@@ -55,12 +55,12 @@ static bool	parse_args(t_data *data)
  * */
 int	parse_input(t_data *data)
 {
-	int 	i;
-	char 	*arg;
+	int		i;
+	char	*arg;
 	bool	chars_valid;
 	bool	input_valid;
 
-	if (data->args->ac < 5 ||  data->args->ac > 6)
+	if (data->args->ac < 5 || data->args->ac > 6)
 	{
 		print_error(INVALID_NUMBER_OF_ARGUMENTS);
 		return (EXIT_FAILURE);

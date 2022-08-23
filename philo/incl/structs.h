@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 17:18:11 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/23 14:40:52 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/23 15:48:21 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,40 +26,39 @@
 
 typedef struct s_args
 {
-	int 	ac;
-	char 	**av;
-} 		t_args;
+	int		ac;
+	char	**av;
+}		t_args;
 
 typedef struct s_data
 {
 	int				n_phil;
 	long			t_die;
-	long 			t_eat;
+	long			t_eat;
 	long			t_sleep;
 	long			min_meals;
-	long 			t_start;
+	long			t_start;
 	bool			died;
-	int 			n_sated;
-	pthread_mutex_t *forks;
-	pthread_mutex_t std_out;
+	int				n_sated;
+	pthread_mutex_t	*forks;
+	pthread_mutex_t	std_out;
 	struct timeval	time;
 	t_args			*args;
 }		t_data;
 
 typedef struct s_phil
 {
-	pthread_t 		*thread;
-	int 			id;
-	int 			status;
+	pthread_t		*thread;
+	int				id;
+	int				status;
 	bool			sated;
-	int 			fork_left;
-	int 			fork_right;
-	long 			t_current;
+	int				fork_left;
+	int				fork_right;
+	long			t_current;
 	long			t_last_eat;
-	long 			t_diff;
-	int 			meals;
-	t_data 			*data;
+	long			t_diff;
+	int				meals;
+	t_data			*data;
 }		t_phil;
-
 
 #endif

@@ -18,7 +18,7 @@
 long	ft_atol(const char *str);
 bool	ft_check_invalid_chars(char *str);
 bool	ft_is_digit(char c);
-void   	ft_usleep(t_phil *phil, long ms);
+void	ft_usleep(t_phil *phil, long ms);
 void	ft_free_phils(t_phil *phil);
 
 #endif

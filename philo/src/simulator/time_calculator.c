@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   time_calculator.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 19:17:24 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/22 19:17:24 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/23 16:02:27 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ void	get_current_time(t_phil *phil)
 	struct timeval	current;
 
 	gettimeofday(&current, NULL);
-	phil->t_current =
-			((current.tv_sec * 1000) + (current.tv_usec / 1000))
-			- phil->data->t_start;
+	phil->t_current
+		= ((current.tv_sec * 1000) + (current.tv_usec / 1000))
+		- phil->data->t_start;
 }
 
 /*

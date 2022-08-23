@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 15:20:06 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/23 14:01:31 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/23 15:08:15 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	init_mutexes(t_data *data)
 
 void	put_all_forks(t_data *data)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < data->n_phil)

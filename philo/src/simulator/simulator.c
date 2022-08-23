@@ -6,7 +6,7 @@
 /*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 15:39:15 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/08/23 15:15:46 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/08/23 16:00:51 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static void	*simulate(void *arg)
 		if (phil->sated == true)
 		{
 			phil->data->n_sated++;
-			break;
+			break ;
 		}
 		ph_sleep(phil);
 		think(phil);
@@ -54,7 +54,7 @@ static void	*simulate(void *arg)
  * The function returns false if join fails, which causes exit
  * fom the program with EXIT_FAILURE code.
  * */
-static bool join_threads(t_phil *phil, t_data *data)
+static bool	join_threads(t_phil *phil, t_data *data)
 {
 	int	i;
 
@@ -77,7 +77,7 @@ static bool join_threads(t_phil *phil, t_data *data)
  * */
 static bool	start_threads(t_phil *phil, t_data *data)
 {
-	int i;
+	int	i;
 
 	phil->thread = NULL;
 	phil->thread = malloc((sizeof(pthread_t) * data->n_phil));
@@ -86,8 +86,8 @@ static bool	start_threads(t_phil *phil, t_data *data)
 	i = 0;
 	while (i < data->n_phil)
 	{
-		if (pthread_create(&phil->thread[i], NULL, &simulate,
-						   (void *)&phil[i]) != 0)
+		if (pthread_create
+			(&phil->thread[i], NULL, &simulate, (void *)&phil[i]) != 0)
 			return (false);
 		i++;
 	}
@@ -104,7 +104,7 @@ static bool	start_threads(t_phil *phil, t_data *data)
  * */
 static void	init_phils(t_phil *phil, t_data *data)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < data->n_phil)
@@ -138,9 +138,9 @@ static void	init_phils(t_phil *phil, t_data *data)
  * */
 int	run_simulation(t_data *data)
 {
-	t_phil 		*phil;
-	bool		threads_started;
-	bool		threads_joined;
+	t_phil	*phil;
+	bool	threads_started;
+	bool	threads_joined;
 
 	phil = malloc(sizeof(t_phil) * data->n_phil);
 	if (!phil)
@@ -157,11 +157,9 @@ int	run_simulation(t_data *data)
 			return (EXIT_FAILURE);
 		}
 	}
-	else
-	{
-		ft_free_phils(phil);
-		return (EXIT_FAILURE);
-	}
 	ft_free_phils(phil);
-	return (EXIT_SUCCESS);
+	if (threads_started == false)
+		return (EXIT_FAILURE);
+	else
+		return (EXIT_SUCCESS);
 }
