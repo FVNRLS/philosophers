@@ -12,25 +12,25 @@
 
 NAME 		= 		philo
 
-CC 			= 		cc
+CC 		= 		cc
 
 FLAGS		= 		-Wall -Wextra -Werror
 
-SRC 		= 		./main.c									\
-					./src/input_parser/args_checker.c			\
-					./src/input_parser/input_parser.c			\
-					./src/simulator/actions.c					\
-					./src/simulator/mutex_controller.c			\
-					./src/simulator/simulator.c					\
-					./src/simulator/time_calculator.c			\
-					./src/simulator/watcher.c					\
-					./src/message_printer.c						\
+SRC 		= 		./main.c				\
+				./src/input_parser/args_checker.c	\
+				./src/input_parser/input_parser.c	\
+				./src/simulator/actions.c		\
+				./src/simulator/mutex_controller.c	\
+				./src/simulator/simulator.c		\
+				./src/simulator/time_calculator.c	\
+				./src/simulator/watcher.c		\
+				./src/message_printer.c			\
 
-TOOLS_SRC	=		./tools/ft_atol.c							\
-					./tools/ft_check_invalid_chars.c			\
-					./tools/ft_is_digit.c						\
-					./tools/ft_usleep.c							\
-					./tools/ft_free_phils.c						\
+TOOLS_SRC	=		./tools/ft_atol.c			\
+				./tools/ft_check_invalid_chars.c	\
+				./tools/ft_is_digit.c			\
+				./tools/ft_usleep.c			\
+				./tools/ft_free_phils.c			\
 
 OBJ 		= 		${SRC:.c=.o}
 TOOLS_OBJ 	= 		${TOOLS_SRC:.c=.o}
