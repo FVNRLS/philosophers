@@ -55,6 +55,8 @@ The program should simulate the philosopher's behaviour the behaviour (eat, slee
 <details>
  <summary>Rules</summary>
 
+![alt text](https://w3.cs.jmu.edu/kirkpams/OpenCSF/Books/csf/html/_images/CSF-Images.8.3.png)
+
 * A number of philosophers are sitting at a round table doing one of three things:
 eating, thinking or sleeping.
 
