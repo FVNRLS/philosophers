@@ -158,7 +158,7 @@ Types:
 * LONG_MIN  = -9223372036854775808 
 * LONG_MAX  = 9223372036854775807
 
-</details>__
+</details>
 
 
 <br>**Contributing**
