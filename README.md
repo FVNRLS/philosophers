@@ -52,7 +52,7 @@ The program should simulate the philosopher's behaviour the behaviour (eat, slee
 
 
 <br>
-__<details>
+<details>
  <summary>Rules</summary>
 
 ![alt text](https://w3.cs.jmu.edu/kirkpams/OpenCSF/Books/csf/html/_images/CSF-Images.8.3.png)
