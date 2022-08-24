@@ -52,7 +52,7 @@ The program should simulate the philosopher's behaviour the behaviour (eat, slee
 
 
 <br>
-<details>
+__<details>
  <summary>Rules</summary>
 
 ![alt text](https://w3.cs.jmu.edu/kirkpams/OpenCSF/Books/csf/html/_images/CSF-Images.8.3.png)
@@ -158,7 +158,7 @@ Types:
 * LONG_MIN  = -9223372036854775808 
 * LONG_MAX  = 9223372036854775807
 
-</details>
+</details>__
 
 
 <br>**Contributing**
