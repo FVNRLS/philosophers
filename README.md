@@ -15,7 +15,45 @@ usleep, gettimeofday, pthread_create, pthread_detach, pthread_join, thread_mutex
 In addition, the following functions are allowed for the project:
 memset, printf, malloc, free, write.
 
-<br>**Rules**
+For the bonus part: waitpid, sem_open, sem_close, sem_post, sem_wait, sem_unlink, exit, kill, fork 
+
+
+<br>**Getting started**
+
+`git clone the project`
+
+`cd to the project directory`
+
+<br>to compile only the mandatory part:
+
+`cd philo`
+
+`make`
+
+<br>to compile the bonus part:
+
+`cd philo`
+
+`make bonus`
+
+<br>**Usage**
+
+The program should simulate the philosopher's behaviour the behaviour (eat, sleep, think...die):
+
+./philo <NUMBER_PHILOSOPHERS> <TIME_TO_DIE> <TIME_TO_EAT> <TIME_TO_SLEEP> (<OPTIONAL: MIN_NUM_TIMES_TO_EAT_FOR_EACH_PHILOSOPHER>
+
+<br>Examples:
+
+`./philo 3 310 200 100`
+
+`./philo 3 800 200 200 7`
+
+
+
+
+<br>
+<details>
+ <summary>Rules</summary>
 
 * A number of philosophers are sitting at a round table doing one of three things:
 eating, thinking or sleeping.
@@ -83,3 +121,56 @@ with the philosopher number and timestamp_in_ms the current timestamp in millise
 will print its death.
 
 * Again, philosophers should avoid to die!
+
+</details>
+
+<br>
+<details>
+ <summary>Edge cases and useful testing parameters</summary>
+
+One philosopher must take 1 fork and die before eating:
+* 1 800 200 200
+
+Run forever:
+* 2 420 200 200 
+* 4 410 200 200 
+* 5 800 200 200 
+* 30 600 200 200 
+* 99 620 200 200 
+* 198 440 200 200 
+* 199 620 200 200
+
+One must die:
+* 4 310 200 100 
+* 3 550 200 200
+
+Must eat at least n times:
+* 5 800 200 200 3 
+* 30 800 200 200 7 
+* 30 600 200 200 7
+
+Types:
+* INT_MIN   = -2147483648 
+* INT_MAX   = 2147483647 
+* UINT_MAX  = 4294967295 
+* LONG_MIN  = -9223372036854775808 
+* LONG_MAX  = 9223372036854775807
+
+</details>
+
+
+<br>**Contributing**
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement". Don't forget to give the project a star! Thanks again!
+
+<br>**Acknowledgments**
+
+Good visualizer:
+
+https://nafuka11.github.io/philosophers-visualizer/
+
+<br>Many thanks for useful advices, support and patience to:
+
+Didar [https://github.com/4funoO/]  
+
+Ksenia  [[https://de.linkedin.com/in/ksenia-morunova](https://de.linkedin.com/in/ksenia-morunova)]
