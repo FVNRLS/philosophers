@@ -23,6 +23,7 @@ static bool	check_if_lonely(t_phil *phil)
 	if (phil->data->n_phil == 1)
 	{
 		print_status(phil, FORK_TAKEN);
+		ft_usleep(phil, phil->data->t_die);
 		print_status(phil, PHIL_DIED);
 		pthread_mutex_unlock(&phil->data->forks[phil->fork_left]);
 		phil->data->died = true;
