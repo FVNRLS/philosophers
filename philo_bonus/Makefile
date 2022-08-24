@@ -10,26 +10,26 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=			philo_bonus
+NAME		=		philo_bonus
 
-CC 			= 		cc
+CC 		= 		cc
 
 FLAGS		= 		-Wall -Wextra -Werror
 
-SRC 		= 		./main_bonus.c								\
+SRC 		= 		./main_bonus.c					\
       				./src/input_parser/args_checker_bonus.c		\
-					./src/input_parser/input_parser_bonus.c		\
-					./src/simulator/actions_bonus.c				\
-					./src/simulator/semaphores_bonus.c			\
-					./src/simulator/simulator_bonus.c			\
-					./src/simulator/time_calculator_bonus.c		\
-					./src/simulator/watcher_bonus.c				\
-					./src/message_printer_bonus.c				\
+				./src/input_parser/input_parser_bonus.c		\
+				./src/simulator/actions_bonus.c			\
+				./src/simulator/semaphores_bonus.c		\
+				./src/simulator/simulator_bonus.c		\
+				./src/simulator/time_calculator_bonus.c		\
+				./src/simulator/watcher_bonus.c			\
+				./src/message_printer_bonus.c			\
 
-TOOLS_SRC	=		./tools/ft_atol_bonus.c						\
-					./tools/ft_check_invalid_chars_bonus.c		\
-					./tools/ft_is_digit_bonus.c					\
-					./tools/ft_usleep_bonus.c					\
+TOOLS_SRC	=		./tools/ft_atol_bonus.c				\
+				./tools/ft_check_invalid_chars_bonus.c		\
+				./tools/ft_is_digit_bonus.c			\
+				./tools/ft_usleep_bonus.c			\
 
 OBJ 		= 		${SRC:.c=.o}
 TOOLS_OBJ 	= 		${TOOLS_SRC:.c=.o}
