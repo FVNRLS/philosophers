@@ -40,7 +40,8 @@ For the bonus part: waitpid, sem_open, sem_close, sem_post, sem_wait, sem_unlink
 
 The program should simulate the philosopher's behaviour the behaviour (eat, sleep, think...die):
 
-./philo <NUMBER_PHILOSOPHERS> <TIME_TO_DIE> <TIME_TO_EAT> <TIME_TO_SLEEP> (<OPTIONAL: MIN_NUM_TIMES_TO_EAT_FOR_EACH_PHILOSOPHER>
+./philo <NUMBER_PHILOSOPHERS> <TIME_TO_DIE> <TIME_TO_EAT> <TIME_TO_SLEEP> 
+       (<OPTIONAL: MIN_NUM_TIMES_TO_EAT_FOR_EACH_PHILOSOPHER>)
 
 <br>Examples:
 
