@@ -52,11 +52,7 @@ static void	simulate(t_phil *phil)
 		phil->meals++;
 		check_if_sated(phil);
 		if (phil->sated == true)
-		{
-			sem_post(phil->data->fork);
-			sem_post(phil->data->fork);
 			exit(PHIL_SATED);
-		}
 		ph_sleep(phil);
 		think(phil);
 	}
