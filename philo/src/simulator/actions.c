@@ -87,7 +87,6 @@ void	think(t_phil *phil)
 	if (phil->data->died == false)
 	{
 		phil->status = FREE;
-		if (phil->data->died == false)
-			print_status(phil, IS_THINKING);
+		print_status(phil, IS_THINKING);
 	}
 }

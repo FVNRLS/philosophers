@@ -22,7 +22,6 @@ static bool	check_if_lonely(t_phil *phil)
 {
 	if (phil->data->n_phil == 1)
 	{
-		print_status(phil, FORK_TAKEN);
 		ft_usleep(phil, phil->data->t_die);
 		print_status(phil, PHIL_DIED);
 		pthread_mutex_unlock(&phil->data->forks[phil->fork_left]);
@@ -75,10 +74,13 @@ void	watch_phils(t_phil *phil)
 	while (phil->data->died == false)
 	{
 		i = 0;
-		while (i++ < phil->data->n_phil)
+		while (i < phil->data->n_phil)
 		{
 			if (phil[i].sated == true)
+			{
 				phil->data->n_sated++;
+				phil[i].sated = false;
+			}
 			if (phil->data->n_sated == phil->data->n_phil)
 				return ;
 			if (phil[i].status == FREE)
