@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_usleep.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rmazurit <rmazurit@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 11:21:22 by rmazurit          #+#    #+#             */
 /*   Updated: 2022/08/23 16:04:36 by rmazurit         ###   ########.fr       */

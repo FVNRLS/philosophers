@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   mutex_controller.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rmazurit <rmazurit@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 15:20:06 by rmazurit          #+#    #+#             */
 /*   Updated: 2022/08/23 15:08:15 by rmazurit         ###   ########.fr       */

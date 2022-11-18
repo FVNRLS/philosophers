@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   time_calculator_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rmazurit <rmazurit@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 13:00:11 by rmazurit          #+#    #+#             */
 /*   Updated: 2022/08/23 16:20:27 by rmazurit         ###   ########.fr       */

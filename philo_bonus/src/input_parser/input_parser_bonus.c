@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   input_parser_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rmazurit <rmazurit@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 15:34:24 by rmazurit          #+#    #+#             */
 /*   Updated: 2022/08/23 16:17:20 by rmazurit         ###   ########.fr       */

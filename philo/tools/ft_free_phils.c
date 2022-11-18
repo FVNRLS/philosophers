@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_free_phils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rmazurit <rmazurit@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 14:52:57 by rmazurit          #+#    #+#             */
 /*   Updated: 2022/08/19 14:56:23 by rmazurit         ###   ########.fr       */

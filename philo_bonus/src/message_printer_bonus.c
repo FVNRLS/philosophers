@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   message_printer_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rmazurit <rmazurit@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 15:45:18 by rmazurit          #+#    #+#             */
 /*   Updated: 2022/08/22 17:26:26 by rmazurit         ###   ########.fr       */

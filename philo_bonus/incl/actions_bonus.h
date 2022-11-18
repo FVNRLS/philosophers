@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   actions_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rmazurit <rmazurit@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 17:15:15 by rmazurit          #+#    #+#             */
 /*   Updated: 2022/08/23 16:07:09 by rmazurit         ###   ########.fr       */

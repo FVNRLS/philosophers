@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   watcher.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rmazurit <rmazurit@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 14:47:44 by rmazurit          #+#    #+#             */
 /*   Updated: 2022/08/23 19:53:45 by rmazurit         ###   ########.fr       */

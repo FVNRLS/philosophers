@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   simulator.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rmazurit <rmazurit@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 15:39:15 by rmazurit          #+#    #+#             */
 /*   Updated: 2022/08/23 16:52:11 by rmazurit         ###   ########.fr       */

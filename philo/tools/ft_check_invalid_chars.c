@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check_invalid_chars.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rmazurit <rmazurit@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 16:54:50 by rmazurit          #+#    #+#             */
 /*   Updated: 2022/08/12 17:26:08 by rmazurit         ###   ########.fr       */
